@@ -653,9 +653,7 @@ h2 {
 }
 
 .slider-business-macbook-icon {
-  display: inline-block;
-}
-.slider-business-macbook-icon img {
+  margin-bottom: 12px;
   margin-right: 12px;
   max-width: 32px;
   height: 32px;
