@@ -1,0 +1,28 @@
+/*class container*/
+body.modal-open {
+  overflow: hidden;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 360px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+  @media screen and (min-width: 1000px) {
+    padding-left: 38px;
+    padding-right: 38px;
+    width: 1000px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-left: 38px;
+    padding-right: 38px;
+    width: 1280px;
+  }
+}

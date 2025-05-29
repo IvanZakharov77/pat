@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-white">
+      <div class="container container-fluid">
+        <a class="navbar-brand" href="#"><img class="logo-nav" src="./image/Logo.png" /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Калькулятор</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Сервис
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">-</a></li>
+                <li><a class="dropdown-item" href="#">-</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">-</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Специалистам
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">-</a></li>
+                <li><a class="dropdown-item" href="#">-</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">-</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Для бухгалтеров</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">О нас</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                RU
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">-</a></li>
+                <li><a class="dropdown-item" href="#">-</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">-</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="nav-btn d-flex" role="search">
+            <button type="button" class="btn btn-primary btn-lg">Попробовать бесплатно</button>
+            <button type="button" class="btn btn-secondary btn-lg">Войти</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section>
+        <div class="container">
+          <div class="hero">
+            <div class="hero-title">
+              <h1>Bankas integrācija un maksājumu pārvaldība</h1>
+              <p>Ātrākais veids, kā iegrāmatot saimnieciskos darījumus - korekti un pārskatāmi</p>
+            </div>
+            <div class="hero-img">
+              <div class="slider-hero">
+                <div class="slider-hero-icon"><img src="./image/icon/letaupi.svg" alt="" /></div>
+                <div>
+                  <h3>Ietaupi laiku</h3>
+                  <p>Vairs nav jāpārraksta čeki – viss ienāk automātiski</p>
+                </div>
+              </div>
+
+              <div class="btn-slider">
+                <div class="left-btn">
+                  <img src="./image/icon/left.svg" alt="left" class="arrow" />
+                </div>
+                <div class="right-btn">
+                  <img src="./image/icon/right.svg" alt="right" class="arrow" />
+                </div>
+              </div>
+              <img src="./image/hero.png" alt="hand fon" class="img-phone" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container section-second">
+          <div class="second-block">
+            <div class="second-title">
+              <h2>Kā tas darbojas?</h2>
+              <p>
+                Pievienojot savu bankas kontu PATS.LV, Tu iegūsti ērtu veidu, kā ātri un precīzi
+                pārvaldīt darījumus - gan ienākumus, gan izdevumus. Visi maksājumi kļūst redzami
+                sistēmā, Tev atliek tikai apstiprināt un tie tiks iegrāmatatoti.
+              </p>
+            </div>
+            <div class="second-cart-item">
+              <div class="card">
+                <img src="./image/second/pievieno.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h3 class="card-title">Pievieno kontu</h3>
+                  <p class="card-text">
+                    Izvēlies savu banku (Swedbank, SEB, Luminor, Citadele, Revolut u.c.) un
+                    autorizējies caur drošu savienojumu.
+                  </p>
+                </div>
+              </div>
+              <div class="card">
+                <img src="./image/second/levelc.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h3 class="card-title">Ievelc darījumus</h3>
+                  <p class="card-text">
+                    Spied "Atjaunot izrakstu" - visi jaunākie darījumi parādās sistēmā.
+                  </p>
+                </div>
+              </div>
+              <div class="card">
+                <img src="./image/second/apzime.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h3 class="card-title">Apzīmē un apstrādā</h3>
+                  <p class="card-text">Spied “Izveidot” vai “Sasaistīt darījumu”</p>
+                </div>
+              </div>
+            </div>
+            <div class="people">
+              <div class="number">
+                <p>15K+</p>
+                <div>
+                  <div class="card-people">
+                    <img src="./image/second/photo1.jpg" alt="" />
+                    <img src="./image/second/photo2.jpg" alt="" />
+                    <img src="./image/second/photo3.jpg" alt="" />
+                    <img src="./image/second/photo4.jpg" alt="" />
+                    <img src="./image/second/photo5.jpg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="card-text">
+                <h3>Jau vairāk nekā 15 000 lietotāju Latvijā</h3>
+                <p>
+                  Tev tikai jāievada dati. Ieņēmumi, izdevumi, čeks vai rēķins - pārējo aprēķina,
+                  sakārto un atgādina PATS.lv.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="third-block">
+            <div class="hero-title">
+              <h2>Grāmatvedība ar bankas integrāciju palīdz</h2>
+            </div>
+            <div class="third-img">
+              <div class="slider-third">
+                <div class="slider-1">
+                  <div>
+                    <img class="slider-third-icon" src="./image/icon/procent.svg" alt="" />
+
+                    <h3>Iegūt vairāk norakstāmo izdevumu</h3>
+                    <p>Samazini nodokļu slogu bez papildu pūlēm</p>
+                  </div>
+                </div>
+                <div class="slider-2">
+                  <div>
+                    <img class="slider-third-icon" src="./image/icon/procent.svg" alt="" />
+
+                    <h3>Iegūt vairāk norakstāmo izdevumu</h3>
+                    <p>Samazini nodokļu slogu bez papildu pūlēm</p>
+                  </div>
+                </div>
+              </div>
+
+              <img src="./image/Businessman with iphone 1.png" alt="hand fon" class="img-man" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container section-girl">
+          <div class="businesswoman">
+            <div class="woman-img"><img src="./image/Businessman woman OK 1.png" alt="" /></div>
+            <div class="businesswoman-item">
+              <h2>Kā tas palīdz ikdienā?</h2>
+              <div class="businesswoman-blocks">
+                <div class="businesswoman-block">
+                  <div>
+                    <img src="./image/icon/gasolin.svg" alt="" />
+                    <h3>Tu norēķinies par degvielu</h3>
+                    <p>Darījums uzreiz redzams PATS.LV</p>
+                  </div>
+                  <div>
+                    <img src="./image/icon/p.svg" alt="" />
+                    <h3>Apmaksāta autostāvvieta vai kancelejas preces</h3>
+                    <p>Vairs netiek aizmirstas</p>
+                  </div>
+                </div>
+                <div class="businesswoman-block">
+                  <div>
+                    <img src="./image/icon/procent.svg" alt="" />
+                    <h3>Saņem komisiju, atmaksā kredītu vai izsniedz avansu</h3>
+                    <p>Viss iegrāmatots pareizi</p>
+                  </div>
+                  <div>
+                    <img src="./image/icon/list.svg" alt="" />
+                    <h3>Sadalīt vai šķirot izdevumus</h3>
+                    <p>Arī vienkārši</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container section-kompromisiem">
+          <div class="blcok-kompromisiem">
+            <h2>Drošība bez kompromisiem</h2>
+            <div class="kompromisiem-item">
+              <div class="card-kompromisiem">
+                <img src="./image/gardless.png" class="card-img-top" alt="..." />
+                <div class="card-kompromisiem-body">
+                  <h3 class="card-title-kompromisiem">Savienojums caur GoCardless</h3>
+                  <p class="card-text-kompromisiem">
+                    Eiropas licencēts PSD2 pakalpojumu sniedzējs ar augstiem drošības standartiem
+                  </p>
+                </div>
+              </div>
+              <div class="card-kompromisiem">
+                <img src="./image/key.png" class="card-img-top" alt="..." />
+                <div class="card-kompromisiem-body">
+                  <h3 class="card-title-kompromisiem">Bez piekļuves glabāšanas</h3>
+                  <p class="card-text-kompromisiem">
+                    Mēs neredzam un neuzglabājam Tavu bankas lietotājvārdu vai paroli
+                  </p>
+                </div>
+              </div>
+              <div class="card-kompromisiem">
+                <img src="./image/lock.png" class="card-img-top" alt="..." />
+                <div class="card-kompromisiem-body">
+                  <h3 class="card-title-kompromisiem">Dati drošos ES serveros</h3>
+                  <p class="card-text-kompromisiem">
+                    Visa informācija tiek šifrēta un glabāta tikai drošās datu glabātuvēs Eiropas
+                    Savienībā
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="business-macbook">
+            <div class="hero-title">
+              <h2>Visbiežāk izmantotās kategorijas</h2>
+              <h3>
+                Gan pašnodarbinātie, gan SIA vadītāji sasaistot darījumus, visbiežāk izvēlas šīs
+                kategorijas:
+              </h3>
+            </div>
+            <div class="business-macbook-img">
+              <div class="slider-business-macbook">
+                <div class="business-macbook-slider-1">
+                  <div>
+                    <img class="slider-business-macbook-icon" src="./image/icon/bagg.svg" alt="" />
+
+                    <h3>Iegūt vairāk norakstāmo izdevumu</h3>
+                    <p>Samazini nodokļu slogu bez papildu pūlēm</p>
+                  </div>
+                </div>
+                <div class="business-macbook-slider-2">
+                  <div>
+                    <img class="slider-business-macbook-icon" src="./image/icon/home.svg" alt="" />
+
+                    <h3>Iegūt vairāk norakstāmo izdevumu</h3>
+                    <p>Samazini nodokļu slogu bez papildu pūlēm</p>
+                  </div>
+                </div>
+              </div>
+
+              <img
+                src="./image/Businessman with mackbook blue reflex 2 1.png"
+                alt="hand fon"
+                class="img-man"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="lietotāji">
+            <h2>Ko saka lietotāji?</h2>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
