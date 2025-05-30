@@ -12,8 +12,16 @@ let currentSlide = 1;
 const slides = document.querySelectorAll('.slid');
 const container = document.querySelector('.hero');
 
+let currentDot = 1;
+const dotes = document.querySelectorAll('.circle-hero');
+
+// Массив с разными значениями сдвига и индекс сдвига
+let shiftValues = [-35, -49, -62, -77];
+let currentShiftIndex = 0;
+
 function changeSlideForward() {
   const current = document.querySelector(`.slid-${currentSlide}`);
+
   if (current) {
     current.style.transition = 'transform 1s ease, opacity 1s ease';
     current.style.transform = 'translateX(-100%)';
@@ -25,11 +33,31 @@ function changeSlideForward() {
   }
 
   currentSlide++;
+  currentDot++;
+  if (currentDot > dotes.length) {
+    currentDot = 1;
+  }
   if (currentSlide > slides.length) {
     currentSlide = 1;
   }
 
   const next = document.querySelector(`.slid-${currentSlide}`);
+  const nextdOT = document.querySelector(`.circle${currentDot}`);
+
+  if (nextdOT) {
+    // Получаем текущее значение left через computed styles
+    let currentLeft = parseInt(window.getComputedStyle(nextdOT).left, 10) || 0;
+
+    // Прибавляем сдвиг из массива
+    let newLeft = currentLeft + shiftValues[currentShiftIndex];
+
+    // Обновляем индекс для следующего сдвига (циклично)
+    currentShiftIndex = (currentShiftIndex + 1) % shiftValues.length;
+
+    // Применяем новое значение left
+    nextdOT.style.left = `${newLeft}px`;
+  }
+
   if (next) {
     next.style.right = '210px';
     next.style.display = 'inline-flex';
@@ -45,6 +73,7 @@ function changeSlideForward() {
 
 function changeSlideBackward() {
   const current = document.querySelector(`.slid-${currentSlide}`);
+
   if (current) {
     current.style.transition = 'transform 1s ease, opacity 1s ease';
     current.style.transform = 'translateX(100%)';
@@ -56,11 +85,14 @@ function changeSlideBackward() {
   }
 
   currentSlide--;
+
   if (currentSlide < 1) {
     currentSlide = slides.length;
+    currentDot = dotes.length;
   }
 
   const previous = document.querySelector(`.slid-${currentSlide}`);
+
   if (previous) {
     previous.style.display = 'inline-flex';
     previous.style.transition = 'transform 1s ease, opacity 1s ease';
@@ -138,3 +170,14 @@ for (let i = 0; i < parents.length; i++) {
   parents[i].addEventListener('mouseenter', handleMouseEnter);
   parents[i].addEventListener('mouseleave', handleMouseLeave);
 }
+
+const dotesContainer = document.querySelector('.hero-animation-container');
+const dots = document.querySelectorAll('.circle-hero');
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    currentSlide = index + 1;
+    currentDot = index + 1;
+    changeSlideForward();
+  });
+});

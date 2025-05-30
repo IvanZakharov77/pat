@@ -149,8 +149,37 @@ h2 {
   opacity: 0;
   display: none;
 }
-// анимация
+// точки hero
+.hero-animation-container {
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 476px;
 
+  .circle-hero {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+  }
+}
+.circle1 {
+  left: -640px;
+}
+
+.circle2 {
+  left: -600px;
+}
+.circle3 {
+  left: -580px;
+}
+.circle4 {
+  left: -560px;
+}
+.circle5 {
+  left: -540px;
+}
 //
 #scroll-section {
   white-space: nowrap;

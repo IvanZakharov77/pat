@@ -247,6 +247,43 @@ h2 {
   display: none;
 }
 
+.hero-animation-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: absolute;
+  top: 476px;
+}
+.hero-animation-container .circle-hero {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.circle1 {
+  left: -640px;
+}
+
+.circle2 {
+  left: -600px;
+}
+
+.circle3 {
+  left: -580px;
+}
+
+.circle4 {
+  left: -560px;
+}
+
+.circle5 {
+  left: -540px;
+}
+
 #scroll-section {
   white-space: nowrap;
   overflow-y: scroll;
