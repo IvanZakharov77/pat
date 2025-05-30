@@ -94,7 +94,7 @@ function handleScrollSlide(event) {
     if (currentSlide === 5) {
       startPageScroll();
     }
-  } else {
+  } else if (event.deltaY < 0 && currentSlide > 1) {
     changeSlideBackward();
 
     if (currentSlide === 1) {
@@ -116,6 +116,23 @@ function handleMouseLeave(event) {
     startPageScroll();
   }
 }
+
+const leftBtn = document.querySelector('.left-btn');
+const rightBtn = document.querySelector('.right-btn');
+
+rightBtn.addEventListener('click', function () {
+  changeSlideBackward();
+  if (currentSlide === 1) {
+    startPageScroll();
+  }
+});
+
+leftBtn.addEventListener('click', function () {
+  changeSlideForward();
+  if (currentSlide === 5) {
+    startPageScroll();
+  }
+});
 
 for (let i = 0; i < parents.length; i++) {
   parents[i].addEventListener('mouseenter', handleMouseEnter);
