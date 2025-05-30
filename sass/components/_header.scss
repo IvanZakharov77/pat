@@ -202,8 +202,8 @@ h2 {
   margin-top: 250px;
 }
 .card {
-  width: 300px;
-  height: 300px;
+  width: 286px;
+  height: 464px;
   border: 5px solid red;
   flex-shrink: 0;
   margin-left: 10px;
@@ -1176,23 +1176,107 @@ h2 {
 
 // summ
 .summ {
+  padding-top: 72px;
+  padding-bottom: 72px;
   background-color: #f8f8f8;
+  .title-summ {
+    text-align: center;
+  }
 }
 .list-first-price {
-  > div {
+  > div > div {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+  }
+  .paragraf-sum {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+}
+.accordion-price {
+  padding-left: 16px;
+  padding-right: 16px;
+  .accordion-body {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .accordion-item,
+  .accordion-button {
+    background-color: #eaeaeb;
+  }
+
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.accordion-child {
+  padding-left: 16px;
+  padding-right: 16px;
+
+  .accordion-item,
+  .accordion-button {
+    background-color: #eaeaeb;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  // margin-left: -20px;
+}
+.accordion-body {
+  ul {
+    padding-left: 0px;
+    li {
+      display: flex;
+      flex-wrap: nowrap;
+      img {
+        max-width: 18px;
+        height: 18px;
+      }
+    }
   }
 }
 .price1,
 .price2,
 .price3 {
+  width: 272px;
+  background-color: #ffffff;
+  border-radius: 24px;
+}
+.price12 {
+  background-color: #80b9fb;
+  border-radius: 28px;
+  padding: 10px 32px 10px 32px;
+  margin: 16px 16px 24px 16px;
+  h3 {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+}
+.price-last-list {
+  padding-left: 16px;
+  padding-right: 16px;
+  ul {
+    padding-left: 0px;
+    li {
+      display: flex;
+      flex-wrap: nowrap;
+      img {
+        max-width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
+.price11,
+.price22,
+.price33 {
   h2 {
     font-weight: 700;
     font-size: 20px;
     line-height: 120%;
     letter-spacing: -0.01em;
+    margin-bottom: 0px;
   }
   h3 {
     font-weight: 700;
@@ -1205,7 +1289,8 @@ h2 {
     font-size: 16px;
     line-height: 125%;
     letter-spacing: -0.01em;
-    margin-right: 116px;
+    // margin-right: 116px;
+    margin-bottom: 0px;
     span {
       font-weight: 700;
       font-size: 34px;
@@ -1213,7 +1298,7 @@ h2 {
     }
   }
 }
-.price1 {
+.price11 {
   border-radius: 24px;
   padding: 16px;
   background-image: url(../../image/book.png);
@@ -1223,21 +1308,62 @@ h2 {
   background-size: 109px 107px; /* Устанавливаем размеры картинки */
 }
 
-.price2 {
+.price22 {
   border-radius: 24px;
   padding: 16px;
   background-image: url(../../image/pig.png);
   background-repeat: no-repeat;
-  background-color: #eaeaeb;
+  background-color: #ffbea5;
   background-position: right bottom; /* Размещаем картинку в правом нижнем углу */
   background-size: 109px 162px; /* Устанавливаем размеры картинки */
 }
-.price3 {
+.price33 {
+  color: #ffffff;
   border-radius: 24px;
   padding: 16px;
   background-image: url(../../image/money.png);
   background-repeat: no-repeat;
-  background-color: #eaeaeb;
+  background-color: #000000;
   background-position: right bottom; /* Размещаем картинку в правом нижнем углу */
   background-size: 109px 162px; /* Устанавливаем размеры картинки */
+}
+.active-block-price {
+  display: none !important;
+}
+
+// btn price
+.toggle-container {
+  display: flex;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  width: 250px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 44px;
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-bottom: 16px;
+}
+
+.toggle-option {
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 118%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border-radius: 20px;
+}
+.toggle-option.activ {
+  height: 36px;
+}
+.activ {
+  background-color: #333;
+  color: white;
 }
