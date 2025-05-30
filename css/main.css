@@ -1479,4 +1479,82 @@ h2 {
   letter-spacing: -0.01em;
   color: #1a1d27;
   margin-bottom: 16px;
+}
+
+.summ {
+  background-color: #f8f8f8;
+}
+
+.list-first-price > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.price1 h2,
+.price2 h2,
+.price3 h2 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+}
+.price1 h3,
+.price2 h3,
+.price3 h3 {
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 118%;
+  letter-spacing: -0.01em;
+}
+.price1 p,
+.price2 p,
+.price3 p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: -0.01em;
+  margin-right: 116px;
+}
+.price1 p span,
+.price2 p span,
+.price3 p span {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 118%;
+}
+
+.price1 {
+  border-radius: 24px;
+  padding: 16px;
+  background-image: url(../../image/book.png);
+  background-repeat: no-repeat;
+  background-color: #eaeaeb;
+  background-position: right bottom; /* Размещаем картинку в правом нижнем углу */
+  background-size: 109px 107px; /* Устанавливаем размеры картинки */
+}
+
+.price2 {
+  border-radius: 24px;
+  padding: 16px;
+  background-image: url(../../image/pig.png);
+  background-repeat: no-repeat;
+  background-color: #eaeaeb;
+  background-position: right bottom; /* Размещаем картинку в правом нижнем углу */
+  background-size: 109px 162px; /* Устанавливаем размеры картинки */
+}
+
+.price3 {
+  border-radius: 24px;
+  padding: 16px;
+  background-image: url(../../image/money.png);
+  background-repeat: no-repeat;
+  background-color: #eaeaeb;
+  background-position: right bottom; /* Размещаем картинку в правом нижнем углу */
+  background-size: 109px 162px; /* Устанавливаем размеры картинки */
 }/*# sourceMappingURL=main.css.map */
