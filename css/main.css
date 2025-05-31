@@ -312,7 +312,6 @@ h2 {
 
 .card {
   width: 286px;
-  height: 464px;
   border: 5px solid red;
   -ms-flex-negative: 0;
       flex-shrink: 0;
