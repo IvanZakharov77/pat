@@ -224,7 +224,7 @@ function changeSlideBackwardThird() {
     current.style.opacity = 0;
 
     setTimeout(() => {
-      current.style.display = 'none';
+      current.style.display = 'inline-flex';
     }, 1000);
   }
   //
