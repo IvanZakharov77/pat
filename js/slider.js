@@ -138,17 +138,30 @@ const leftBtn = document.querySelector('.left-btn');
 const rightBtn = document.querySelector('.right-btn');
 
 rightBtn.addEventListener('click', function () {
-  changeSlideBackward();
   if (currentSlide === 1) {
-    startPageScroll();
+    return; // Ничего не делаем, если currentSlide равен 1
+  }
+
+  changeSlideBackward();
+  if (currentSlide != 1) {
+    if (currentSlide === 1) {
+      startPageScroll();
+    }
   }
 });
 
 leftBtn.addEventListener('click', function () {
-  changeSlideForward();
   if (currentSlide === 5) {
-    startPageScroll();
+    return; // Ничего не делаем, если currentSlide равен 1
   }
+
+  changeSlideForward();
+  if (currentSlide != 1) {
+    if (currentSlide === 5) {
+      startPageScroll();
+    }
+  }
+  return;
 });
 
 for (let i = 0; i < parents.length; i++) {
