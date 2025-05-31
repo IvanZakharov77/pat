@@ -1197,6 +1197,7 @@ h2 {
 .accordion-price {
   padding-left: 16px;
   padding-right: 16px;
+  margin-bottom: 16px;
   .accordion-body {
     padding-right: 0px;
     padding-left: 0px;
@@ -1228,6 +1229,7 @@ h2 {
     li {
       display: flex;
       flex-wrap: nowrap;
+
       img {
         max-width: 18px;
         height: 18px;
@@ -1261,9 +1263,15 @@ h2 {
     li {
       display: flex;
       flex-wrap: nowrap;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 133%;
+      margin-bottom: 10px;
+
       img {
         max-width: 18px;
         height: 18px;
+        margin-right: 8px;
       }
     }
   }
