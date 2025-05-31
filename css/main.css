@@ -262,10 +262,14 @@ h2 {
   height: 8px;
   border-radius: 50%;
   background-color: white;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 
 .circle1 {
-  left: -640px;
+  left: -620px;
 }
 
 .circle2 {

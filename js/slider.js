@@ -8,14 +8,15 @@ const disableTouchMove = function (event) {
   event.preventDefault();
 };
 
-let shiftValues = [-35, -49, -62, -77];
-let shiftValues1 = [35, 35, 62, 77];
-let currentShiftIndex = 0;
-let currentDot = 1;
 let currentSlide = 1;
 const slides = document.querySelectorAll('.slid');
 const container = document.querySelector('.hero');
-const dotes = document.querySelectorAll('.circle-hero');
+//
+let circles = document.querySelectorAll('.circle-hero');
+let lastScroll = 0;
+let isScrolling = false;
+const offsets = [-0, -0, -45, -60, -74, -88];
+const offsets1 = [-0, -0, 0, 0, 0, 0];
 
 function changeSlideForward() {
   const current = document.querySelector(`.slid-${currentSlide}`);
@@ -33,25 +34,12 @@ function changeSlideForward() {
   if (currentSlide > slides.length) {
     currentSlide = 1;
   }
-  //
-  currentDot++;
-  if (currentDot > dotes.length) {
-    currentDot = 1;
+  const currentDot = document.querySelector(`.circle${currentSlide - 1}`);
+  if (currentDot) {
+    let offset = offsets[currentSlide];
+    currentDot.style.transform = `translateX(${offset}px)`;
   }
 
-  const nextdOT = document.querySelector(`.circle${currentDot}`);
-  console.log('currentDot', currentDot, 'currentSlide', currentSlide);
-  if (nextdOT) {
-    let currentLeft = parseInt(window.getComputedStyle(nextdOT).left, 10) || 0;
-
-    let newLeft = currentLeft + shiftValues[currentShiftIndex];
-
-    currentShiftIndex = (currentShiftIndex + 1) % shiftValues.length;
-
-    nextdOT.style.left = `${newLeft}px`;
-  }
-
-  //
   const next = document.querySelector(`.slid-${currentSlide}`);
   if (next) {
     next.style.right = '210px';
@@ -79,32 +67,16 @@ function changeSlideBackward() {
   }
   //
 
-  if (currentDot != 1) {
-    currentDot = currentDot + 1;
-  }
-  currentDot--;
-
-  if (currentDot < 1) {
-    currentDot = dotes.length;
-  }
-
-  const nextdOT = document.querySelector(`.circle${currentDot}`);
-
-  if (nextdOT) {
-    let currentLeft = parseInt(window.getComputedStyle(nextdOT).left, 10) || 0;
-
-    let newLeft = currentLeft + shiftValues1[currentShiftIndex];
-
-    currentShiftIndex = ((currentShiftIndex + 1) % shiftValues1.length) - 1;
-
-    nextdOT.style.left = `${newLeft}px`;
-  }
   //
   currentSlide--;
   if (currentSlide < 1) {
     currentSlide = slides.length;
   }
-  console.log('currentDot', currentDot, 'currentSlide', currentSlide);
+  const currentDot = document.querySelector(`.circle${currentSlide}`);
+  if (currentDot) {
+    let offset = offsets1[currentSlide];
+    currentDot.style.transform = `translateX(${offset}px)`;
+  }
   const previous = document.querySelector(`.slid-${currentSlide}`);
   if (previous) {
     previous.style.display = 'inline-flex';
@@ -139,16 +111,10 @@ function handleScrollSlide(event) {
     if (currentSlide === 5) {
       startPageScroll();
     }
-    if (currentDot === 5) {
-      startPageScroll();
-    }
-  } else if (event.deltaY < 0 && currentSlide > 1 && currentDot > 1) {
+  } else if (event.deltaY < 0 && currentSlide > 1) {
     changeSlideBackward();
 
     if (currentSlide === 1) {
-      startPageScroll();
-    }
-    if (currentDot === 1) {
       startPageScroll();
     }
   }
@@ -166,9 +132,6 @@ function handleMouseLeave(event) {
   if (currentSlide === 5) {
     startPageScroll();
   }
-  if (currentDot === 5) {
-    startPageScroll();
-  }
 }
 
 const leftBtn = document.querySelector('.left-btn');
@@ -179,17 +142,11 @@ rightBtn.addEventListener('click', function () {
   if (currentSlide === 1) {
     startPageScroll();
   }
-  if (currentDot === 1) {
-    startPageScroll();
-  }
 });
 
 leftBtn.addEventListener('click', function () {
   changeSlideForward();
   if (currentSlide === 5) {
-    startPageScroll();
-  }
-  if (currentDot === 5) {
     startPageScroll();
   }
 });

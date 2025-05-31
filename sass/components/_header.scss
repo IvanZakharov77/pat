@@ -154,6 +154,7 @@ h2 {
   display: flex;
   flex-wrap: nowrap;
   position: absolute;
+
   top: 476px;
 
   .circle-hero {
@@ -162,21 +163,25 @@ h2 {
     height: 8px;
     border-radius: 50%;
     background-color: white;
+    transition: transform 0.2s ease-in-out;
   }
 }
 .circle1 {
-  left: -640px;
+  left: -620px;
 }
 
 .circle2 {
   left: -600px;
 }
+
 .circle3 {
   left: -580px;
 }
+
 .circle4 {
   left: -560px;
 }
+
 .circle5 {
   left: -540px;
 }
