@@ -201,11 +201,10 @@ function changeSlideForwardThird() {
   if (currentSlideThird > slidesThird.length) {
     currentSlideThird = 1;
   }
-  console.log(currentSlideThird);
 
   const next = document.querySelector(`.slider-animation${currentSlideThird}`);
   if (next) {
-    next.style.right = '100px';
+    next.style.right = '0px';
     next.style.display = 'inline-flex';
     next.style.transition = 'transform 1s ease, opacity 1s ease';
     next.style.transform = 'translateX(100%)';
@@ -242,6 +241,7 @@ function changeSlideBackwardThird() {
     previous.style.transition = 'transform 1s ease, opacity 1s ease';
     previous.style.transform = 'translateX(-100%)';
     previous.style.opacity = 1;
+    previous.style.position = 'absolute';
 
     setTimeout(() => {
       previous.style.transform = 'translateX(0)';
@@ -250,15 +250,15 @@ function changeSlideBackwardThird() {
 }
 
 function startPageScrollThird() {
-  window.removeEventListener('wheel', handleScrollSlide);
-  window.removeEventListener('wheel', handleScrollSlide);
-  window.removeEventListener('touchmove', disableTouchMove);
+  window.removeEventListener('wheel', handleScrollSlideThird);
+  window.removeEventListener('wheel', handleScrollSlideThird);
+  window.removeEventListener('touchmove', disableTouchMoveThird);
 }
 
 function startSlideScrollThird() {
-  window.removeEventListener('wheel', disableScroll);
+  window.removeEventListener('wheel', disableScrollThird);
   window.removeEventListener('wheel', handleScrollSlideThird);
-  window.removeEventListener('touchmove', disableTouchMove);
+  window.removeEventListener('touchmove', disableTouchMoveThird);
 }
 
 function handleScrollSlideThird(event) {
@@ -268,28 +268,28 @@ function handleScrollSlideThird(event) {
     changeSlideForwardThird();
 
     if (currentSlideThird === 3) {
-      startPageScroll();
+      startPageScrollThird();
     }
   } else if (event.deltaY < 0 && currentSlideThird > 1) {
     changeSlideBackwardThird();
 
     if (currentSlideThird === 1) {
-      startPageScroll();
+      startPageScrollThird();
     }
   }
 }
 
 function handleMouseEnterThird(event) {
   window.addEventListener('wheel', handleScrollSlideThird, { passive: false });
-  window.addEventListener('touchmove', disableTouchMove, { passive: false });
+  window.addEventListener('touchmove', disableTouchMoveThird, { passive: false });
 }
 
 function handleMouseLeaveThird(event) {
   window.removeEventListener('wheel', handleScrollSlideThird);
-  window.removeEventListener('touchmove', disableTouchMove);
+  window.removeEventListener('touchmove', disableTouchMoveThird);
 
   if (currentSlideThird === 3) {
-    startPageScroll();
+    startPageScrollThird();
   }
 }
 
