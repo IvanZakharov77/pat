@@ -1505,6 +1505,11 @@ h2 {
   margin-bottom: 32px;
 }
 
+.accordion-button,
+.accordion-button:not(.collapsed) {
+  color: #1a1d27;
+}
+
 .accordion-price {
   padding-left: 16px;
   padding-right: 16px;
@@ -1515,6 +1520,15 @@ h2 {
 .accordion-price .accordion-body {
   padding-right: 0px;
   padding-left: 0px;
+}
+.accordion-price .accordion-body li {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  margin-bottom: 10px;
+}
+.accordion-price .accordion-body li img {
+  margin-right: 8px;
 }
 .accordion-price .accordion-item,
 .accordion-price .accordion-button {
