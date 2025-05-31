@@ -500,6 +500,7 @@ h2 {
   display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  overflow: hidden;
 }
 .third-block h2 {
   margin-top: 104px;
@@ -511,7 +512,10 @@ h2 {
 }
 
 .slider-1,
-.slider-2 {
+.slider-2,
+.slider-3,
+.slider-4,
+.slider-5 {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -525,16 +529,22 @@ h2 {
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
   background: rgba(255, 255, 255, 0.7);
-  z-index: 10;
+  z-index: 99;
 }
 .slider-1 h3,
-.slider-2 h3 {
+.slider-2 h3,
+.slider-3 h3,
+.slider-4 h3,
+.slider-5 h3 {
   line-height: 122%;
   letter-spacing: -0.02em;
   color: #1a1d27;
 }
 .slider-1 p,
-.slider-2 p {
+.slider-2 p,
+.slider-3 p,
+.slider-4 p,
+.slider-5 p {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 12px;
@@ -550,6 +560,41 @@ h2 {
 .slider-2 {
   top: 232px;
   right: 95px;
+}
+
+.slider-3 {
+  top: 302px;
+  right: 420px;
+}
+
+.slider-4 {
+  top: 232px;
+  right: 95px;
+}
+
+.slider-5 {
+  top: 302px;
+  right: 420px;
+}
+
+.slider-animation1,
+.slider-animation2,
+.slider-animation3 {
+  z-index: 99 !important;
+}
+
+.slider-animation2 {
+  position: absolute;
+  right: -250px;
+  opacity: 0;
+  display: none;
+}
+
+.slider-animation3 {
+  position: absolute;
+  right: -250px;
+  opacity: 0;
+  display: none;
 }
 
 .slider-third-icon {
