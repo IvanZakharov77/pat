@@ -184,10 +184,26 @@ for (let i = 0; i < parentsThird.length; i++) {
   let scrollTimeout;
   let isMouseOver = false;
   let lastScrollTime = 0;
-  const SCROLL_THRESHOLD = 100; // минимальное время между прокрутками в мс
+  const SCROLL_THRESHOLD = 100;
+
+  // Функция для проверки, находится ли мышь над слайдером
+  const checkMousePosition = (e) => {
+    const rect = parentsThird[i].getBoundingClientRect();
+    return (
+      e.clientX >= rect.left &&
+      e.clientX <= rect.right &&
+      e.clientY >= rect.top &&
+      e.clientY <= rect.bottom
+    );
+  };
 
   const handleThirdSliderScroll = (e) => {
-    if (!isMouseOver) return;
+    // Проверяем позицию мыши при каждом событии прокрутки
+    if (!checkMousePosition(e)) {
+      isMouseOver = false;
+      return;
+    }
+    isMouseOver = true;
 
     const currentTime = Date.now();
     if (currentTime - lastScrollTime < SCROLL_THRESHOLD) {
@@ -241,6 +257,8 @@ for (let i = 0; i < parentsThird.length; i++) {
       if (currentSlideThird === 3) {
         document.body.style.overflow = '';
         document.body.style.paddingRight = '';
+        isMouseOver = false;
+        isScrollingThird = false;
       }
     } else if (delta < 0 && currentSlideThird > 1) {
       const current = document.querySelector(`.slider-animation${currentSlideThird}`);
@@ -250,31 +268,53 @@ for (let i = 0; i < parentsThird.length; i++) {
       if (currentSlideThird === 1) {
         document.body.style.overflow = '';
         document.body.style.paddingRight = '';
+        isMouseOver = false;
+        isScrollingThird = false;
       }
     } else {
       isScrollingThird = false;
+      if (currentSlideThird === 3 || currentSlideThird === 1) {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+        isMouseOver = false;
+      }
     }
 
-    // Reset scroll lock after animation
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
       isScrollingThird = false;
+      if (currentSlideThird === 3 || currentSlideThird === 1) {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+        isMouseOver = false;
+      }
     }, 400);
   };
 
-  const blockScroll = () => {
-    isMouseOver = true;
-    document.body.style.overflow = 'hidden';
-    document.body.style.paddingRight = '15px';
+  const blockScroll = (e) => {
+    if (checkMousePosition(e) && currentSlideThird !== 3) {
+      isMouseOver = true;
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = '15px';
+    }
   };
 
-  const unblockScroll = () => {
-    isMouseOver = false;
-    if (currentSlideThird === 1 || currentSlideThird === 3) {
+  const unblockScroll = (e) => {
+    if (!checkMousePosition(e) || currentSlideThird === 3) {
+      isMouseOver = false;
       document.body.style.overflow = '';
       document.body.style.paddingRight = '';
     }
   };
+
+  // Добавляем обработчики для отслеживания движения мыши
+  parentsThird[i].addEventListener('mousemove', (e) => {
+    if (checkMousePosition(e)) {
+      blockScroll(e);
+    } else {
+      unblockScroll(e);
+    }
+  });
 
   parentsThird[i].addEventListener('mouseenter', blockScroll);
   parentsThird[i].addEventListener('mouseleave', unblockScroll);
