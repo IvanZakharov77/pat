@@ -177,99 +177,106 @@ for (let i = 0; i < parents.length; i++) {
 let parentsThird = document.getElementsByClassName('third-block');
 
 for (let i = 0; i < parentsThird.length; i++) {
-  parentsThird[i].addEventListener('mouseenter', () => {
-    document.body.style.overflow = 'hidden';
-    document.body.style.paddingRight = '15px';
-  });
-
-  parentsThird[i].addEventListener('mouseleave', () => {
-    document.body.style.overflow = '';
-    document.body.style.paddingRight = '';
-  });
-
   let currentSlideThird = 1;
   const slidesThird = document.querySelectorAll('.slider-t');
   const sliderCountThird = slidesThird.length;
-  let isScrollingThird = false; // Добавляем флаг для отслеживания процесса прокрутки
+  let isScrollingThird = false;
+  let scrollTimeout;
+  let isMouseOver = false;
+  let lastScrollTime = 0;
+  const SCROLL_THRESHOLD = 100; // минимальное время между прокрутками в мс
 
-  parentsThird[i].addEventListener('wheel', (e) => {
-    if (isScrollingThird) return; // Если идет прокрутка, выходим из функции
+  const handleThirdSliderScroll = (e) => {
+    if (!isMouseOver) return;
 
-    var delta = e.deltaY || e.detail || e.wheelDelta;
+    const currentTime = Date.now();
+    if (currentTime - lastScrollTime < SCROLL_THRESHOLD) {
+      return;
+    }
+    lastScrollTime = currentTime;
 
-    isScrollingThird = true; // Устанавливаем флаг, что началась прокрутка
-
-    if (delta > 0) {
-      console.log('++++++++++++++');
-
-      if (currentSlideThird < sliderCountThird) {
-        const current = document.querySelector(`.slider-animation${currentSlideThird}`);
-        if (current) {
-          current.style.transition = 'transform 0.5s ease-in-out'; // Добавляем плавность
-          current.style.transform = 'scale(0.8)'; // Уменьшаем масштаб
-          current.style.opacity = 0;
-
-          setTimeout(() => {
-            current.style.display = 'none';
-            current.style.transform = 'scale(1)'; // Возвращаем масштаб
-          }, 500);
-        }
-        //
-        currentSlideThird++;
-        const next = document.querySelector(`.slider-animation${currentSlideThird}`);
-        if (next) {
-          next.style.right = '0px';
-          next.style.display = 'block';
-          next.style.transition = 'transform 0.5s ease-in-out'; // Добавляем плавность
-          next.style.transform = 'scale(1.2)'; // Увеличиваем масштаб
-          next.style.opacity = 1;
-
-          setTimeout(() => {
-            next.style.transform = 'scale(1)'; // Возвращаем масштаб
-          }, 0);
-        }
-      } else {
-        document.body.style.overflow = '';
-        document.body.style.paddingRight = '0px';
-      }
-    } else {
-      console.log('-');
-
-      if (currentSlideThird > 1) {
-        const current = document.querySelector(`.slider-animation${currentSlideThird}`);
-        if (current) {
-          current.style.transition = 'transform 0.5s ease-in-out'; // Добавляем плавность
-          current.style.transform = 'scale(0.8)'; // Уменьшаем масштаб
-          current.style.opacity = 0;
-
-          setTimeout(() => {
-            current.style.display = 'none';
-            current.style.transform = 'scale(1)'; // Возвращаем масштаб
-          }, 500);
-        }
-        //
-        currentSlideThird--;
-        const next = document.querySelector(`.slider-animation${currentSlideThird}`);
-        if (next) {
-          next.style.right = '0px';
-          next.style.display = 'flex';
-          next.style.transition = 'transform 0.5s ease-in-out'; // Добавляем плавность
-          next.style.transform = 'scale(1.2)'; // Увеличиваем масштаб
-          next.style.opacity = 1;
-
-          setTimeout(() => {
-            next.style.transform = 'scale(1)'; // Возвращаем масштаб
-          }, 0);
-        }
-      } else {
-        document.body.style.overflow = '';
-        document.body.style.paddingRight = '0px';
-      }
-      //
+    if (isScrollingThird) {
+      e.preventDefault();
+      return;
     }
 
-    setTimeout(() => {
-      isScrollingThird = false; // Снимаем флаг после задержки
-    }, 500); // Задержка в 500 миллисекунд
-  });
+    const delta = e.deltaY || e.detail || e.wheelDelta;
+    isScrollingThird = true;
+    e.preventDefault();
+
+    const animateSlide = (current, next, direction) => {
+      if (current) {
+        current.style.transition = 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out';
+        current.style.transform = 'scale(0.8)';
+        current.style.opacity = 0;
+
+        setTimeout(() => {
+          current.style.display = 'none';
+          current.style.transform = 'scale(1)';
+          isScrollingThird = false;
+        }, 300);
+      }
+
+      if (next) {
+        next.style.position = 'absolute';
+        next.style.top = '0';
+        next.style.left = '0';
+        next.style.width = '100%';
+        next.style.display = 'block';
+        next.style.transition = 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out';
+        next.style.transform = 'scale(1.2)';
+        next.style.opacity = 1;
+
+        setTimeout(() => {
+          next.style.transform = 'scale(1)';
+        }, 50);
+      }
+    };
+
+    if (delta > 0 && currentSlideThird < sliderCountThird) {
+      const current = document.querySelector(`.slider-animation${currentSlideThird}`);
+      currentSlideThird++;
+      const next = document.querySelector(`.slider-animation${currentSlideThird}`);
+      animateSlide(current, next, 'forward');
+      if (currentSlideThird === 3) {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      }
+    } else if (delta < 0 && currentSlideThird > 1) {
+      const current = document.querySelector(`.slider-animation${currentSlideThird}`);
+      currentSlideThird--;
+      const next = document.querySelector(`.slider-animation${currentSlideThird}`);
+      animateSlide(current, next, 'backward');
+      if (currentSlideThird === 1) {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      }
+    } else {
+      isScrollingThird = false;
+    }
+
+    // Reset scroll lock after animation
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      isScrollingThird = false;
+    }, 400);
+  };
+
+  const blockScroll = () => {
+    isMouseOver = true;
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = '15px';
+  };
+
+  const unblockScroll = () => {
+    isMouseOver = false;
+    if (currentSlideThird === 1 || currentSlideThird === 3) {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }
+  };
+
+  parentsThird[i].addEventListener('mouseenter', blockScroll);
+  parentsThird[i].addEventListener('mouseleave', unblockScroll);
+  parentsThird[i].addEventListener('wheel', handleThirdSliderScroll, { passive: false });
 }
