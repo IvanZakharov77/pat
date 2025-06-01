@@ -186,6 +186,7 @@ h2 {
   left: -670px;
 }
 //
+
 #scroll-section {
   white-space: nowrap;
   overflow-y: scroll;
@@ -442,16 +443,15 @@ h2 {
 .slider-animation1,
 .slider-animation2,
 .slider-animation3 {
-  z-index: 99 !important;
+  position: absolute;
+  z-index: 99;
 }
 .slider-animation2 {
-  position: absolute;
   right: -250px;
   opacity: 0;
   display: none;
 }
 .slider-animation3 {
-  position: absolute;
   right: -250px;
   opacity: 0;
   display: none;

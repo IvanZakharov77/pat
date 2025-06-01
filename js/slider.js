@@ -172,128 +172,104 @@ for (let i = 0; i < parents.length; i++) {
 
 // ---------------------second slider
 
+// ---------------------second slider
+
 let parentsThird = document.getElementsByClassName('third-block');
 
-const disableScrollThird = function (event) {
-  event.preventDefault();
-};
-
-const disableTouchMoveThird = function (event) {
-  event.preventDefault();
-};
-
-let currentSlideThird = 1;
-const slidesThird = document.querySelectorAll('.slider-t');
-
-function changeSlideForwardThird() {
-  const current = document.querySelector(`.slider-animation${currentSlideThird}`);
-  if (current) {
-    current.style.transition = 'transform 1s ease, opacity 1s ease';
-    current.style.transform = 'translateX(-100%)';
-    current.style.opacity = 0;
-
-    setTimeout(() => {
-      current.style.display = 'none';
-    }, 1000);
-  }
-
-  currentSlideThird++;
-  if (currentSlideThird > slidesThird.length) {
-    currentSlideThird = 1;
-  }
-
-  const next = document.querySelector(`.slider-animation${currentSlideThird}`);
-  if (next) {
-    next.style.right = '0px';
-    next.style.display = 'inline-flex';
-    next.style.transition = 'transform 1s ease, opacity 1s ease';
-    next.style.transform = 'translateX(100%)';
-    next.style.opacity = 1;
-
-    setTimeout(() => {
-      next.style.transform = 'translateX(0)';
-    }, 0);
-  }
-}
-
-function changeSlideBackwardThird() {
-  const current = document.querySelector(`.slider-animation${currentSlideThird}`);
-  if (current) {
-    current.style.transition = 'transform 1s ease, opacity 1s ease';
-    current.style.transform = 'translateX(100%)';
-    current.style.opacity = 0;
-
-    setTimeout(() => {
-      current.style.display = 'none';
-    }, 1000);
-  }
-  //
-
-  //
-  currentSlideThird--;
-  if (currentSlideThird < 1) {
-    currentSlideThird = slidesThird.length;
-  }
-
-  const previous = document.querySelector(`.slider-animation${currentSlideThird}`);
-  if (previous) {
-    previous.style.display = 'inline-flex';
-    previous.style.transition = 'transform 1s ease, opacity 1s ease';
-    previous.style.transform = 'translateX(-100%)';
-    previous.style.opacity = 1;
-    previous.style.position = 'absolute';
-
-    setTimeout(() => {
-      previous.style.transform = 'translateX(0)';
-    }, 0);
-  }
-}
-
-function startPageScrollThird() {
-  window.removeEventListener('wheel', handleScrollSlideThird);
-  window.removeEventListener('wheel', handleScrollSlideThird);
-  window.removeEventListener('touchmove', disableTouchMoveThird);
-}
-
-function startSlideScrollThird() {
-  window.removeEventListener('wheel', disableScrollThird);
-  window.removeEventListener('wheel', handleScrollSlideThird);
-  window.removeEventListener('touchmove', disableTouchMoveThird);
-}
-
-function handleScrollSlideThird(event) {
-  event.preventDefault();
-
-  if (event.deltaY > 0) {
-    changeSlideForwardThird();
-
-    if (currentSlideThird === 3) {
-      startPageScrollThird();
-    }
-  } else if (event.deltaY < 0 && currentSlideThird > 1) {
-    changeSlideBackwardThird();
-
-    if (currentSlideThird === 1) {
-      startPageScrollThird();
-    }
-  }
-}
-
-function handleMouseEnterThird(event) {
-  window.addEventListener('wheel', handleScrollSlideThird, { passive: false });
-  window.addEventListener('touchmove', disableTouchMoveThird, { passive: false });
-}
-
-function handleMouseLeaveThird(event) {
-  window.removeEventListener('wheel', handleScrollSlideThird);
-  window.removeEventListener('touchmove', disableTouchMoveThird);
-
-  if (currentSlideThird === 3) {
-    startPageScrollThird();
-  }
-}
-
 for (let i = 0; i < parentsThird.length; i++) {
-  parentsThird[i].addEventListener('mouseenter', handleMouseEnterThird);
-  parentsThird[i].addEventListener('mouseleave', handleMouseLeaveThird);
+  parentsThird[i].addEventListener('mouseenter', () => {
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = '15px';
+  });
+
+  parentsThird[i].addEventListener('mouseleave', () => {
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+  });
+
+  let currentSlideThird = 1;
+  const slidesThird = document.querySelectorAll('.slider-t');
+  const sliderCountThird = slidesThird.length;
+  let isScrollingThird = false; // Добавляем флаг для отслеживания процесса прокрутки
+
+  parentsThird[i].addEventListener('wheel', (e) => {
+    if (isScrollingThird) return; // Если идет прокрутка, выходим из функции
+
+    var delta = e.deltaY || e.detail || e.wheelDelta;
+
+    isScrollingThird = true; // Устанавливаем флаг, что началась прокрутка
+
+    if (delta > 0) {
+      console.log('++++++++++++++');
+
+      if (currentSlideThird < sliderCountThird) {
+        const current = document.querySelector(`.slider-animation${currentSlideThird}`);
+        if (current) {
+          current.style.transition = 'transform 0.5s ease-in-out'; // Добавляем плавность
+          current.style.transform = 'scale(0.8)'; // Уменьшаем масштаб
+          current.style.opacity = 0;
+
+          setTimeout(() => {
+            current.style.display = 'none';
+            current.style.transform = 'scale(1)'; // Возвращаем масштаб
+          }, 500);
+        }
+        //
+        currentSlideThird++;
+        const next = document.querySelector(`.slider-animation${currentSlideThird}`);
+        if (next) {
+          next.style.right = '0px';
+          next.style.display = 'block';
+          next.style.transition = 'transform 0.5s ease-in-out'; // Добавляем плавность
+          next.style.transform = 'scale(1.2)'; // Увеличиваем масштаб
+          next.style.opacity = 1;
+
+          setTimeout(() => {
+            next.style.transform = 'scale(1)'; // Возвращаем масштаб
+          }, 0);
+        }
+      } else {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '0px';
+      }
+    } else {
+      console.log('-');
+
+      if (currentSlideThird > 1) {
+        const current = document.querySelector(`.slider-animation${currentSlideThird}`);
+        if (current) {
+          current.style.transition = 'transform 0.5s ease-in-out'; // Добавляем плавность
+          current.style.transform = 'scale(0.8)'; // Уменьшаем масштаб
+          current.style.opacity = 0;
+
+          setTimeout(() => {
+            current.style.display = 'none';
+            current.style.transform = 'scale(1)'; // Возвращаем масштаб
+          }, 500);
+        }
+        //
+        currentSlideThird--;
+        const next = document.querySelector(`.slider-animation${currentSlideThird}`);
+        if (next) {
+          next.style.right = '0px';
+          next.style.display = 'flex';
+          next.style.transition = 'transform 0.5s ease-in-out'; // Добавляем плавность
+          next.style.transform = 'scale(1.2)'; // Увеличиваем масштаб
+          next.style.opacity = 1;
+
+          setTimeout(() => {
+            next.style.transform = 'scale(1)'; // Возвращаем масштаб
+          }, 0);
+        }
+      } else {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '0px';
+      }
+      //
+    }
+
+    setTimeout(() => {
+      isScrollingThird = false; // Снимаем флаг после задержки
+    }, 500); // Задержка в 500 миллисекунд
+  });
 }
