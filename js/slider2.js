@@ -44,11 +44,12 @@ function handleSlideScroll(e) {
     }
   } else {
     //  вверх
-    if (currentSlideThird <= 1) {
+    if (currentSlideThird === 1) {
       document.body.style.overflow = '';
       document.body.style.paddingRight = '';
       return;
     }
+
     const current = document.querySelector(`.slider-animation${currentSlideThird}`);
     currentSlideThird--;
     if (currentSlideThird < 1) {
@@ -95,10 +96,11 @@ const observer = new IntersectionObserver(
         element.addEventListener('wheel', handleSlideScroll, { passive: false });
       } else {
         console.log('Элемент не виден');
-        document.body.style.overflow = '';
-        document.body.style.paddingRight = '';
-
-        element.removeEventListener('wheel', handleSlideScroll);
+        setTimeout(() => {
+          document.body.style.overflow = '';
+          document.body.style.paddingRight = '';
+          element.removeEventListener('wheel', handleSlideScroll);
+        }, 1000);
       }
     });
   },
@@ -109,7 +111,8 @@ const observer = new IntersectionObserver(
 );
 
 const element = document.getElementById('third-section');
-business - macbook - section;
+// const elementBusiness = document.getElementById('business - macbook - section');
+
 if (element) {
   observer.observe(element);
 }
