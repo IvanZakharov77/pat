@@ -20,3 +20,62 @@ function toggleOption(option) {
     firstBlock.classList.add('active-block-price');
   }
 }
+// -------------
+// ------------------acordion
+// Функция для переключения collapse элементов
+function toggleCollapse(targetId, collapseElements, otherCollapseElements) {
+  setTimeout(() => {
+    collapseElements.forEach((element) => {
+      if (element.classList.contains('show')) {
+        element.classList.remove('show'); // Закрываем
+        otherCollapseElements.forEach((otherElement) => {
+          otherElement.classList.remove('show'); // Закрываем другие
+        });
+      } else {
+        element.classList.add('show'); // Открываем
+        otherCollapseElements.forEach((otherElement) => {
+          otherElement.classList.remove('show'); // Закрываем другие
+        });
+      }
+    });
+  }, 200);
+}
+
+// Слушатель кликов
+const allBlocksBtn = document.querySelector('.list-all-price');
+const collapse00 = document.querySelectorAll('.collapse00');
+const collapse01 = document.querySelectorAll('.collapse01');
+const collapse02 = document.querySelectorAll('.collapse02');
+const collapse03 = document.querySelectorAll('.collapse03');
+const collapse04 = document.querySelectorAll('.collapse04');
+const collapse05 = document.querySelectorAll('.collapse05');
+
+allBlocksBtn.addEventListener('click', function (event) {
+  if (event.target.classList.contains('accordion-button')) {
+    const targetId = event.target.getAttribute('data-bs-target');
+
+    if (targetId === '#collapse0') {
+      // Только удаляем класс 'show', если он есть
+      collapse01.forEach((element) => {
+        if (element.classList.contains('show')) {
+          element.classList.remove('show');
+        }
+      });
+    } else if (targetId === '#collapse1') {
+      toggleCollapse(targetId, collapse01, collapse02);
+    } else if (targetId === '#collapse2') {
+      toggleCollapse(targetId, collapse02, collapse01);
+    } else if (targetId === '#collapse3') {
+      // Только удаляем класс 'show', если он есть
+      collapse04.forEach((element) => {
+        if (element.classList.contains('show')) {
+          element.classList.remove('show');
+        }
+      });
+    } else if (targetId === '#collapse4') {
+      toggleCollapse(targetId, collapse04, collapse05);
+    } else if (targetId === '#collapse5') {
+      toggleCollapse(targetId, collapse05, collapse04);
+    }
+  }
+});

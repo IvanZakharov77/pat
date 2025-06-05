@@ -1,5 +1,3 @@
-import { observer1 } from './examinationBlockSlider.js';
-
 // переменные
 const sliderT = '.slider-t';
 const sliderAnimation = '.slider-animation';
@@ -10,11 +8,15 @@ const businessAnimation = '.business-macbook-slider';
 const businessSection = 'business-macbook-section';
 //
 
-const slidesThird = document.querySelectorAll('.slider-t');
+const slidesThird = document.querySelectorAll(sliderT);
 const sliderCountThird = slidesThird.length;
+
+const slidesBusines = document.querySelectorAll(businessT);
+const sliderCountBusines = slidesBusines.length;
+
 let currentSlideThird = 1;
 
-function handleSlideScroll(e) {
+function handleSlideScroll(e, options) {
   if (e.deltaY > 0) {
     //  вниз
     if (currentSlideThird === 3) {
@@ -123,17 +125,14 @@ const observer = new IntersectionObserver(
         document.body.style.overflow = 'hidden';
         document.body.style.paddingRight = '15px';
 
-        element.addEventListener('mouseover', function () {
-          element.addEventListener('wheel', handleSlideScroll, { passive: false });
-        });
+        element.addEventListener('wheel', handleSlideScroll, { passive: false });
       } else {
         console.log('Элемент не виден');
         setTimeout(() => {
           document.body.style.overflow = '';
           document.body.style.paddingRight = '';
-          element.addEventListener('mouseout', function () {
-            element.removeEventListener('wheel', handleSlideScroll);
-          });
+
+          element.removeEventListener('wheel', handleSlideScroll);
         }, 1000);
       }
     });
@@ -145,9 +144,13 @@ const observer = new IntersectionObserver(
 );
 
 const element = document.getElementById(thirdSection);
-
-const elementBusiness = document.getElementById('business - macbook - section');
+const elementBusiness = document.getElementById(businessSection);
 
 if (element) {
   observer.observe(element);
 }
+
+// if (elementBusiness) {
+//   observer.observe(elementBusiness);
+// }
+//
