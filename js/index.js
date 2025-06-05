@@ -22,26 +22,24 @@ function toggleOption(option) {
 }
 // -------------
 // ------------------acordion
-// Функция для переключения collapse элементов
 function toggleCollapse(targetId, collapseElements, otherCollapseElements) {
   setTimeout(() => {
     collapseElements.forEach((element) => {
       if (element.classList.contains('show')) {
-        element.classList.remove('show'); // Закрываем
+        element.classList.remove('show');
         otherCollapseElements.forEach((otherElement) => {
-          otherElement.classList.remove('show'); // Закрываем другие
+          otherElement.classList.remove('show');
         });
       } else {
-        element.classList.add('show'); // Открываем
+        element.classList.add('show');
         otherCollapseElements.forEach((otherElement) => {
-          otherElement.classList.remove('show'); // Закрываем другие
+          otherElement.classList.remove('show');
         });
       }
     });
   }, 200);
 }
 
-// Слушатель кликов
 const allBlocksBtn = document.querySelector('.list-all-price');
 const collapse00 = document.querySelectorAll('.collapse00');
 const collapse01 = document.querySelectorAll('.collapse01');
@@ -55,7 +53,6 @@ allBlocksBtn.addEventListener('click', function (event) {
     const targetId = event.target.getAttribute('data-bs-target');
 
     if (targetId === '#collapse0') {
-      // Только удаляем класс 'show', если он есть
       collapse01.forEach((element) => {
         if (element.classList.contains('show')) {
           element.classList.remove('show');
@@ -66,7 +63,6 @@ allBlocksBtn.addEventListener('click', function (event) {
     } else if (targetId === '#collapse2') {
       toggleCollapse(targetId, collapse02, collapse01);
     } else if (targetId === '#collapse3') {
-      // Только удаляем класс 'show', если он есть
       collapse04.forEach((element) => {
         if (element.classList.contains('show')) {
           element.classList.remove('show');
