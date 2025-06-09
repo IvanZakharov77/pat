@@ -1,0 +1,57 @@
+// section-girl
+.section-girl {
+  background-color: #ffbea5;
+}
+.businesswoman {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding-top: 94px;
+  padding-left: 43px;
+}
+
+.businesswoman-item {
+  margin-bottom: 64px;
+  margin-right: 38px;
+  h2 {
+    margin-bottom: 48px;
+    text-align: center;
+
+    line-height: 107%;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+  }
+}
+.businesswoman-block:first-child {
+  div {
+    margin-bottom: 20px;
+  }
+}
+.businesswoman-block {
+  display: flex;
+  flex-wrap: nowrap;
+  div:nth-child(2) {
+    margin-left: 20px;
+  }
+  div {
+    padding: 24px;
+    width: 286px;
+    height: 190px;
+    border-radius: 16px;
+    backdrop-filter: blur(15px);
+    background: #ffffff;
+  }
+  h3 {
+    line-height: 133%;
+    letter-spacing: -0.01em;
+    color: #1a1d27;
+  }
+  p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 147%;
+    letter-spacing: -0.01em;
+    color: #1a1d27;
+  }
+}

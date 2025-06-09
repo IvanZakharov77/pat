@@ -1,0 +1,44 @@
+// section-kompromisiem
+
+.section-kompromisiem {
+  background-color: #f8f8f8;
+}
+.blcok-kompromisiem {
+  padding-top: 72px;
+  padding-bottom: 72px;
+  h2 {
+    line-height: 107%;
+    letter-spacing: -0.03em;
+    color: var(--midnight-logic-500);
+  }
+}
+
+.kompromisiem-item {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.card-kompromisiem {
+  width: 388px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  padding: 20px;
+
+  img {
+    max-width: 348px;
+    height: 132px;
+  }
+  h3 {
+    line-height: 133%;
+    letter-spacing: -0.01em;
+    color: #1a1d27;
+  }
+  p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 147%;
+    letter-spacing: -0.01em;
+    color: #1a1d27;
+  }
+}

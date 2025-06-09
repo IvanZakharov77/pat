@@ -17,12 +17,87 @@
   </head>
   <body>
     <nav id="top" class="navbar navbar-expand-lg bg-white">
-      <div class="container container-fluid">
+      <div class="containe-not-bootstrap container-fluid">
         <a class="navbar-brand" href="#"><img class="logo-nav" src="./image/Logo.png" /></a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="mobile-block-menu">
+            <div><button class="close-menu">x</button></div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li>
+                <a class="navbar-brand" href="#"><img class="logo-nav" src="./image/Logo.png" /></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Калькулятор</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Сервис
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">-</a></li>
+                  <li><a class="dropdown-item" href="#">-</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">-</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Специалистам
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">-</a></li>
+                  <li><a class="dropdown-item" href="#">-</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">-</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Для бухгалтеров</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">О нас</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  RU
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">-</a></li>
+                  <li><a class="dropdown-item" href="#">-</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">-</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="nav-btn d-flex" role="search">
+            <button type="button" class="btn btn-primary btn-lg">Попробовать бесплатно</button>
+            <button type="button" class="btn btn-secondary btn-lg">Войти</button>
+          </div>
+        </div>
         <button
           class="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
@@ -30,79 +105,11 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Калькулятор</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Сервис
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">-</a></li>
-                <li><a class="dropdown-item" href="#">-</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">-</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Специалистам
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">-</a></li>
-                <li><a class="dropdown-item" href="#">-</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">-</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Для бухгалтеров</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">О нас</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                RU
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">-</a></li>
-                <li><a class="dropdown-item" href="#">-</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">-</a></li>
-              </ul>
-            </li>
-          </ul>
-          <div class="nav-btn d-flex" role="search">
-            <button type="button" class="btn btn-primary btn-lg">Попробовать бесплатно</button>
-            <button type="button" class="btn btn-secondary btn-lg">Войти</button>
-          </div>
-        </div>
       </div>
     </nav>
     <main>
       <section>
-        <div class="container">
+        <div class="containe-not-bootstrap">
           <div class="hero">
             <div class="hero-title">
               <h1>Bankas integrācija un maksājumu pārvaldība</h1>
@@ -170,7 +177,7 @@
         </div>
       </section>
       <section>
-        <div class="container section-second">
+        <div class="containe-not-bootstrap section-second">
           <div class="second-block">
             <div class="second-title">
               <h2>Kā tas darbojas?</h2>
@@ -232,80 +239,57 @@
           </div>
         </div>
       </section>
-      <section id="third-section">
-        <div class="container">
-          <div id="third-block-id" class="third-block">
+      <section id="third-section" class="section-features-banner">
+        <div class="containe-not-bootstrap">
+          <div id="third-block-id" class="third-block features-content">
             <div class="hero-title">
               <h2>Grāmatvedība ar bankas integrāciju palīdz</h2>
             </div>
-            <div class="third-img">
-              <div class="slider-third">
-                <div class="slider-t slider-animation1">
+            <div class="third-img features-widgets">
+              <div class="slider-third features-widgets">
+                <div class="app-widget">
                   <div class="slider-1">
                     <div>
-                      <img class="slider-third-icon" src="./image/icon/procent.svg" alt="" />
-
-                      <h3>Iegūt vairāk norakstāmo izdevumu</h3>
-                      <p>Samazini nodokļu slogu bez papildu pūlēm</p>
+                      <img class="slider-third-icon" src="./image/widgets/vidget-12.svg" alt="" />
                     </div>
                   </div>
                   <div class="slider-2">
                     <div>
-                      <img class="slider-third-icon" src="./image/icon/timer.svg" alt="" />
-
-                      <h3>Iegūt vairāk norakstāmo izdevumu</h3>
-                      <p>Samazini nodokļu slogu bez papildu pūlēm</p>
+                      <img class="slider-third-icon" src="./image/widgets/vidget-13.svg" alt="" />
                     </div>
                   </div>
                 </div>
 
                 <!--  -->
-                <div class="slider-t slider-animation2">
+                <div class="slider-t slider-animation2 app-widget">
                   <div class="slider-3">
                     <div>
-                      <img class="slider-third-icon" src="./image/icon/listBlack.svg" alt="" />
-
-                      <h3>Sašķirot darījumus</h3>
-                      <p>
-                        Viss redzams – atzīmē darījumus, pievieno kategoriju un saglabā uzskaitē.
-                      </p>
+                      <img class="slider-third-icon" src="./image/widgets/vidget-14.svg" alt="" />
                     </div>
                   </div>
                   <div class="slider-4">
                     <div>
-                      <img class="slider-third-icon" src="./image/icon/setting.svg" alt="" />
-
-                      <h3>Automatizēt uzskaiti</h3>
-                      <p>
-                        Sistēma piedāvā kategoriju pēc darījuma apraksta, bet gala lēmums ir Tavs
-                      </p>
+                      <img class="slider-third-icon" src="./image/widgets/vidget-15.svg" alt="" />
                     </div>
                   </div>
                 </div>
 
                 <!--  -->
-                <div class="slider-t slider-animation3">
+                <div class="slider-t slider-animation3 app-widget">
                   <div class="slider-5">
                     <div>
-                      <img class="slider-third-icon" src="./image/icon/documentBlack.svg" alt="" />
-
-                      <h3>Sekot apmaksas statusiem</h3>
-                      <p>
-                        Redzi, kuri rēķini ir apmaksāti, kuri vēl gaida apstiprinājumu, un vari
-                        sasaistīt tos ar ienākumiem
-                      </p>
+                      <img class="slider-third-icon" src="./image/widgets/vidget-16.svg" alt="" />
                     </div>
                   </div>
                 </div>
               </div>
-
               <img src="./image/Businessman with iphone 1.png" alt="hand fon" class="img-man" />
             </div>
           </div>
         </div>
       </section>
       <section>
-        <div class="container section-girl">
+        <div class="containe-not-bootstrap section-girl">
           <div class="businesswoman">
             <div class="woman-img"><img src="./image/Businessman woman OK 1.png" alt="" /></div>
             <div class="businesswoman-item">
@@ -341,7 +325,7 @@
         </div>
       </section>
       <section>
-        <div class="container section-kompromisiem">
+        <div class="containe-not-bootstrap section-kompromisiem">
           <div class="blcok-kompromisiem">
             <h2>Drošība bez kompromisiem</h2>
             <div class="kompromisiem-item">
@@ -378,7 +362,7 @@
         </div>
       </section>
       <section id="business-macbook-section">
-        <div class="container">
+        <div class="containe-not-bootstrap">
           <div class="business-macbook">
             <div class="hero-title">
               <h2>Visbiežāk izmantotās kategorijas</h2>
@@ -521,7 +505,7 @@
         </div>
       </section>
       <section>
-        <div class="container summ">
+        <div class="containe-not-bootstrap summ">
           <h2 class="title-summ">Cik tas maksā</h2>
           <div>
             <div class="toggle-container">
@@ -1801,74 +1785,76 @@
         </div>
       </section>
       <section>
-        <div class="container">
+        <div class="containe-not-bootstrap">
           <div class="lietotāji">
-            <h2>Ko saka lietotāji?</h2>
-            <div class="lietotāji-item">
-              <div class="card">
-                <img src="./image/three/1.jpg" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h3 class="card-title">Zane</h3>
-                  <p class="card-text">
-                    Agrāk aizmirsu iegrāmatot mazos tēriņus. Tagad viss ienāk automātiski, tikai
-                    apstiprinu.
-                  </p>
-                  <div>
-                    <div><p>Friziere un salona īpašniece</p></div>
+            <div>
+              <h2>Ko saka lietotāji?</h2>
+              <div class="lietotāji-item">
+                <div class="card">
+                  <img src="./image/three/1.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h3 class="card-title">Zane</h3>
+                    <p class="card-text">
+                      Agrāk aizmirsu iegrāmatot mazos tēriņus. Tagad viss ienāk automātiski, tikai
+                      apstiprinu.
+                    </p>
                     <div>
-                      <img src="./image/icon/label.svg" alt="" />
-                      <p>Rīga</p>
+                      <div><p>Friziere un salona īpašniece</p></div>
+                      <div>
+                        <img src="./image/icon/label.svg" alt="" />
+                        <p>Rīga</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="card">
-                <img src="./image/three/2.jpg" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h3 class="card-title">Uģis</h3>
-                  <p class="card-text">
-                    Beidzot saprotu, cik daudz var norakstīt un kā tas ietekmē nodokļus. Ietaupu
-                    reāli.
-                  </p>
-                  <div>
-                    <div><p>Fotogrāfs un pašnodarbinātais</p></div>
+                <div class="card">
+                  <img src="./image/three/2.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h3 class="card-title">Uģis</h3>
+                    <p class="card-text">
+                      Beidzot saprotu, cik daudz var norakstīt un kā tas ietekmē nodokļus. Ietaupu
+                      reāli.
+                    </p>
                     <div>
-                      <img src="./image/icon/label.svg" alt="" />
-                      <p>Даугавпилс</p>
+                      <div><p>Fotogrāfs un pašnodarbinātais</p></div>
+                      <div>
+                        <img src="./image/icon/label.svg" alt="" />
+                        <p>Даугавпилс</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="card">
-                <img src="./image/three/1.jpg" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h3 class="card-title">Zane</h3>
-                  <p class="card-text">
-                    Agrāk aizmirsu iegrāmatot mazos tēriņus. Tagad viss ienāk automātiski, tikai
-                    apstiprinu.
-                  </p>
-                  <div>
-                    <div><p>Friziere un salona īpašniece</p></div>
+                <div class="card">
+                  <img src="./image/three/1.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h3 class="card-title">Zane</h3>
+                    <p class="card-text">
+                      Agrāk aizmirsu iegrāmatot mazos tēriņus. Tagad viss ienāk automātiski, tikai
+                      apstiprinu.
+                    </p>
                     <div>
-                      <img src="./image/icon/label.svg" alt="" />
-                      <p>Rīga</p>
+                      <div><p>Friziere un salona īpašniece</p></div>
+                      <div>
+                        <img src="./image/icon/label.svg" alt="" />
+                        <p>Rīga</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="card">
-                <img src="./image/three/2.jpg" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h3 class="card-title">Uģis</h3>
-                  <p class="card-text">
-                    Beidzot saprotu, cik daudz var norakstīt un kā tas ietekmē nodokļus. Ietaupu
-                    reāli.
-                  </p>
-                  <div>
-                    <div><p>Fotogrāfs un pašnodarbinātais</p></div>
+                <div class="card">
+                  <img src="./image/three/2.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h3 class="card-title">Uģis</h3>
+                    <p class="card-text">
+                      Beidzot saprotu, cik daudz var norakstīt un kā tas ietekmē nodokļus. Ietaupu
+                      reāli.
+                    </p>
                     <div>
-                      <img src="./image/icon/label.svg" alt="" />
-                      <p>Даугавпилс</p>
+                      <div><p>Fotogrāfs un pašnodarbinātais</p></div>
+                      <div>
+                        <img src="./image/icon/label.svg" alt="" />
+                        <p>Даугавпилс</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1878,7 +1864,7 @@
         </div>
       </section>
       <section>
-        <div class="container">
+        <div class="containe-not-bootstrap">
           <div class="vēlies-uzzināt">
             <h2>Vēlies uzzināt vairāk?</h2>
             <div class="vēlies-uzzināt-item">
@@ -1999,7 +1985,7 @@
         </div>
       </section>
       <section>
-        <div class="container">
+        <div class="containe-not-bootstrap">
           <div class="sanem-svarigako">
             <div>
               <img src="./image/cc5ddfe9-a7f3-4791-a0d5-1fdaa086e1ab 1.png" alt="" />
@@ -2034,7 +2020,7 @@
         </div>
       </section>
       <section>
-        <div class="container">
+        <div class="containe-not-bootstrap">
           <div class="uzdotie">
             <h2>Biežāk uzdotie jautājumi</h2>
             <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -2188,7 +2174,7 @@
         </div>
       </section>
       <section>
-        <div class="container">
+        <div class="containe-not-bootstrap">
           <div class="komanda">
             <div class="komanda-left">
               <div class="komanda-item">
@@ -2219,7 +2205,7 @@
         </div>
       </section>
     </main>
-    <footer class="container footer">
+    <footer class="containe-not-bootstrap footer">
       <div class="footer-top">
         <div>
           <a class="navbar-brand" href="#"><img class="logo-nav" src="./image/Logoblack.png" /></a>
@@ -2271,5 +2257,11 @@
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
       crossorigin="anonymous"
     ></script>
+    <!--  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./js/sliderjs/main.js"></script>
   </body>
 </html>

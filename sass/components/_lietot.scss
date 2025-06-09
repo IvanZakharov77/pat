@@ -1,0 +1,55 @@
+//lietotāji
+.lietotāji {
+  margin-top: 72px;
+  margin-bottom: 72px;
+}
+.vēlies-uzzināt-item {
+  margin-bottom: 20px;
+}
+.lietotāji-item {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  .card {
+    padding: 32px 23px 32px 23px;
+    border: none;
+    border-radius: 32px;
+    background-color: #fff4db;
+    img {
+      max-width: 128px;
+      height: 200px;
+    }
+    .card-body {
+      padding: 0px;
+      .card-text {
+        font-size: 15px;
+      }
+      div {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        p {
+          font-family: var(--font-family);
+          font-weight: 500;
+          font-size: 9px;
+          line-height: 122%;
+          letter-spacing: 0.01em;
+          color: #1a1d27;
+        }
+        img {
+          max-width: 12px;
+          height: 12px;
+        }
+        div {
+          border-radius: 4px;
+          padding: 5.5px 6px 5.5px 6px;
+          background-color: #f6e4bb;
+          p {
+            margin: 0px;
+          }
+        }
+      }
+    }
+  }
+}

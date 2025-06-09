@@ -1,0 +1,73 @@
+//business-macbook
+.business-macbook {
+  margin-top: 72px;
+  margin-bottom: 72px;
+  padding-left: 64px;
+  padding-top: 64px;
+  background-color: #fff4db;
+  border-radius: 32px;
+  display: flex;
+  flex-wrap: nowrap;
+  h2 {
+    margin-top: 104px;
+    margin-right: 650px;
+    line-height: 107%;
+    letter-spacing: -0.03em;
+    color: #1a1d27;
+  }
+  .hero-title {
+    h3 {
+      margin-bottom: 304px;
+      margin-right: 800px;
+    }
+  }
+}
+.business-macbook-slider-1,
+.business-macbook-slider-2 {
+  position: absolute;
+  display: flex;
+  flex-wrap: nowrap;
+  border-radius: 16px;
+  padding: 16px;
+  width: 200px;
+  height: 166px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 10;
+  h3 {
+    line-height: 122%;
+    letter-spacing: -0.02em;
+    color: #1a1d27;
+  }
+  p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 133%;
+    color: #1a1d27;
+  }
+}
+.business-macbook-slider-1 {
+  top: 302px;
+  right: 350px;
+}
+.business-macbook-slider-2 {
+  top: 180px;
+  right: 100px;
+}
+.slider-business-macbook-icon {
+  margin-bottom: 12px;
+  margin-right: 12px;
+  max-width: 32px;
+  height: 32px;
+}
+
+.business-macbook-img {
+  position: relative;
+  .img-man {
+    position: absolute;
+    right: 64px;
+    max-width: 736px;
+    height: 652px;
+  }
+}

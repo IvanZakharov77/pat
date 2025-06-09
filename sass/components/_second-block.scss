@@ -1,0 +1,137 @@
+// second-block
+.section-second {
+  background-color: #f8f8f8;
+}
+.second-block {
+  padding: 72px 0 72px 0;
+}
+.second-title {
+  h2 {
+    line-height: 107%;
+    letter-spacing: -0.03em;
+    color: #1a1d27;
+  }
+  p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 147%;
+    letter-spacing: -0.01em;
+    color: #1a1d27;
+  }
+  margin-bottom: 40px;
+}
+.second-cart-item {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  .card:not(:last-child) {
+    margin-right: 20px;
+  }
+  .card {
+    width: 348px;
+    border: none;
+    border-radius: 20px;
+    padding: 20px 20px 20px 20px;
+
+    img {
+      margin-bottom: 20px;
+      max-width: 348px;
+      height: auto;
+    }
+  }
+  .card-body {
+    padding: 0px;
+    h3 {
+      line-height: 133%;
+      letter-spacing: -0.01em;
+      color: #1a1d27;
+    }
+    p {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 147%;
+      letter-spacing: -0.01em;
+      color: #1a1d27;
+    }
+  }
+}
+.people {
+  border-radius: 20px;
+  padding: 32px;
+  background-color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  .number {
+    padding-right: 550px;
+
+    p {
+      font-family: var(--font-family);
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 107%;
+      letter-spacing: -0.03em;
+      color: #1a1d27;
+    }
+  }
+  .card-text {
+    h3 {
+      line-height: 133%;
+      letter-spacing: -0.01em;
+      color: #1a1d27;
+    }
+    p {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 147%;
+      letter-spacing: -0.01em;
+      color: #1a1d27;
+    }
+  }
+}
+.card-people {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  top: -80px;
+  right: -250px;
+}
+
+.card-people img {
+  max-width: 64px;
+  height: 64px;
+  position: absolute;
+
+  margin-left: 0;
+  transition: all 0.3s ease;
+}
+
+.card-people img:first-child {
+  margin-left: -90px;
+  z-index: 9;
+}
+
+.card-people img:nth-child(2) {
+  margin-left: -45px;
+  z-index: 8;
+}
+
+.card-people img:nth-child(3) {
+  margin-left: 0;
+  z-index: 7;
+}
+
+.card-people img:nth-child(4) {
+  margin-left: 45px;
+  z-index: 6;
+}
+
+.card-people img:nth-child(5) {
+  margin-left: 85px;
+  z-index: 5;
+}

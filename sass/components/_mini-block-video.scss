@@ -1,0 +1,83 @@
+//vēlies-uzzināt
+.mini-block-video {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  .video {
+    border-radius: 4px;
+    padding: 6px;
+    background-color: #ffbea5;
+    p {
+      margin: 0px 0px 0px 4px;
+    }
+  }
+  .info-c {
+    color: #3c8dea;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 118%;
+    p {
+      margin-right: 4px;
+    }
+  }
+  div {
+    display: flex;
+    flex-wrap: nowrap;
+
+    align-items: baseline;
+  }
+}
+.vēlies-uzzināt-item {
+  border-radius: 32px;
+  padding: 48px 64px;
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+
+.video-blocks {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: scrollLeftRight 15s ease-in-out infinite;
+}
+
+.video-block {
+  margin-right: 20px;
+}
+
+.video-block img {
+  max-width: 254px;
+  height: 318px;
+}
+
+@keyframes scrollLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-254px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.mini-block-video {
+  display: flex;
+  flex-wrap: nowrap;
+}
+//
+.animation-container {
+  display: flex;
+  gap: 15px;
+  position: relative;
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;
+}
+.circle:not(:last-child) {
+  margin-right: 6px;
+}

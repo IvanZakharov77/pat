@@ -1,3 +1,12 @@
+// menu navbar
+const btnOpenMenu = document.querySelectorAll('.navbar-toggler');
+
+btnOpenMenu.forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    console.log('Кнопка нажата!');
+  });
+});
+
 // btn price
 function toggleOption(option) {
   const yearly = document.getElementById('yearly');

@@ -1,0 +1,78 @@
+//cars
+.mini-block-cars {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  .cars {
+    border-radius: 4px;
+    padding: 6px;
+    background-color: #ffbea5;
+    p {
+      margin: 0px 0px 0px 4px;
+    }
+  }
+  .info-c {
+    color: #3c8dea;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 118%;
+    p {
+      margin-right: 4px;
+    }
+  }
+  div {
+    display: flex;
+    flex-wrap: nowrap;
+
+    align-items: baseline;
+  }
+}
+.vēlies-uzzināt-item {
+  border-radius: 32px;
+  padding: 48px 64px;
+  background-color: #f8f8f8;
+  overflow: hidden;
+}
+
+.cars-blocks {
+  display: flex;
+
+  animation: scrollLeftRights 15s ease-in-out infinite;
+}
+
+.car-block {
+  margin-right: 20px;
+  margin-bottom: 32px;
+  p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.car-block img {
+  max-width: 345px;
+  height: 128px;
+  margin-bottom: 16px;
+}
+
+@keyframes scrollLeftRights {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-345px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.animation-container-cars {
+  margin-bottom: 48px;
+  display: flex;
+  gap: 15px;
+  position: relative;
+}

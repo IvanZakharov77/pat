@@ -2,7 +2,7 @@
 body.modal-open {
   overflow: hidden;
 }
-.container {
+.containe-not-bootstrap {
   margin-left: auto;
   margin-right: auto;
 
@@ -14,8 +14,10 @@ body.modal-open {
   }
   @media screen and (min-width: 768px) {
     width: 768px;
+    padding-left: 38px;
+    padding-right: 38px;
   }
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1000px) and (max-width: 1279px) {
     padding-left: 38px;
     padding-right: 38px;
     width: 1000px;
