@@ -1,11 +1,34 @@
 // menu navbar
 const btnOpenMenu = document.querySelectorAll('.navbar-toggler');
+const btnClozeMenu = document.querySelectorAll('.btn-close-menu');
+const activeBlockMenuBack = document.querySelector('.mobile-block-menu');
+const activeMenu = document.querySelector('.mobile-menu');
 
-btnOpenMenu.forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    console.log('Кнопка нажата!');
+if (btnOpenMenu.length > 0 && activeBlockMenuBack && activeMenu) {
+  btnOpenMenu.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      // Показываем блок с фоном и меню с анимацией
+      activeBlockMenuBack.style.display = 'block'; // Убираем display: none
+      setTimeout(() => {
+        activeBlockMenuBack.classList.add('active-block-menu-back');
+        activeMenu.classList.add('active-menu');
+      }, 10); // Маленькая задержка для применения transition
+    });
   });
-});
+
+  btnClozeMenu.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      // Убираем классы с анимацией
+      activeBlockMenuBack.classList.remove('active-block-menu-back');
+      activeMenu.classList.remove('active-menu');
+
+      // Добавляем задержку перед скрытием
+      setTimeout(() => {
+        activeBlockMenuBack.style.display = 'none';
+      }, 300); // Задержка должна быть равна длительности анимации
+    });
+  });
+}
 
 // btn price
 function toggleOption(option) {

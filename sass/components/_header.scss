@@ -57,25 +57,42 @@ h2 {
   font-weight: 700;
   font-size: 56px;
 }
+.btn-close-menu {
+  display: none;
+}
 @media screen and (max-width: 1279px) {
   body {
     position: relative;
   }
+
   .mobile-block-menu {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 1040;
     width: 100vw;
     height: 100vh;
     background-color: #00000070;
-    .navbar-nav {
-      background-color: white;
-      flex-direction: column !important;
-      padding: 20px 20px 48px;
-    }
+    display: none; /* Изначально скрыт */
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .navbar-nav {
+    background-color: white;
+    flex-direction: column !important;
+    padding: 20px 20px 48px;
+  }
+
+  .btn-close-menu {
+    display: block;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 }
+
 @media screen and (min-width: 1280px) {
   .navbar-nav li:first-child {
     display: none;
@@ -83,18 +100,37 @@ h2 {
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1279px) {
-  // .navbar-nav {
-  //   display: none !important;
-  // }
-  .navbar-nav {
+  .mobile-block-menu {
+    display: none; /* Изначально скрыт */
+    opacity: 0; /* Изначально скрыт */
+    visibility: hidden; /* Убираем из потока */
+  }
+
+  .mobile-menu {
+    background-color: white;
     position: fixed;
     right: 0%;
     top: 0%;
     width: 360px;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.3s ease; /* Плавное появление */
   }
+
+  .active-block-menu-back {
+    display: block;
+    opacity: 1; /* Сделаем видимым */
+    visibility: visible; /* Делаем доступным для взаимодействия */
+  }
+
+  .active-menu {
+    transform: translateX(0); /* Меняем положение с правой стороны */
+  }
+
   .navbar-toggler {
     display: block !important;
   }
+
   .navbar-expand-lg .navbar-collapse {
     justify-content: space-between;
   }
