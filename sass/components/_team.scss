@@ -12,7 +12,7 @@
     top: -100px;
     left: 104px;
     max-width: 404px;
-    height: 561px;
+    // height: 561px;
   }
 }
 .komanda-item {
@@ -96,4 +96,36 @@
   background-color: #fff4db;
   font-weight: 700;
   margin-left: 156px;
+}
+//
+@media screen and (min-width: 1000px) and (max-width: 1279px) {
+  .komanda-left img {
+    position: absolute;
+    top: -100px;
+    left: 4px;
+    max-width: 404px;
+  }
+  .komanda-right {
+    margin-bottom: 142px;
+    margin-top: 0px;
+    margin-left: 499px;
+    div {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .komanda-item div:nth-child(3) {
+    left: 320px;
+  }
+  .komanda-item div:nth-child(2) {
+    left: 250px;
+  }
+  .komanda-item div:first-child {
+    left: 0px;
+  }
+  .btn-komanda {
+    margin-left: 0px;
+  }
 }

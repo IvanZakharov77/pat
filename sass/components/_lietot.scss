@@ -53,3 +53,25 @@
     }
   }
 }
+.lietotāji-item {
+  .card {
+    width: 286px;
+  }
+  .card:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+//
+@media screen and (min-width: 1000px) and (max-width: 1279px) {
+  .lietotāji {
+    overflow: hidden;
+  }
+  .card {
+    width: 280px;
+  }
+  .lietotāji-item {
+    .card:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}

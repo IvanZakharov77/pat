@@ -30,18 +30,7 @@
   .card:not(:last-child) {
     margin-right: 20px;
   }
-  .card {
-    width: 348px;
-    border: none;
-    border-radius: 20px;
-    padding: 20px 20px 20px 20px;
 
-    img {
-      margin-bottom: 20px;
-      max-width: 348px;
-      height: auto;
-    }
-  }
   .card-body {
     padding: 0px;
     h3 {
@@ -134,4 +123,40 @@
 .card-people img:nth-child(5) {
   margin-left: 85px;
   z-index: 5;
+}
+//
+@media screen and (min-width: 1280px) {
+  .card {
+    width: 348px;
+    border: none;
+    border-radius: 20px;
+    padding: 20px 20px 20px 20px;
+
+    img {
+      margin-bottom: 20px;
+      max-width: 348px;
+      height: auto;
+    }
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1279px) {
+  .card {
+    width: 294px;
+    border: none;
+    border-radius: 20px;
+    padding: 20px 20px 20px 20px;
+    margin: 0px;
+
+    img {
+      margin-bottom: 20px;
+      max-width: 254px;
+      height: auto;
+    }
+  }
+  .people {
+    flex-wrap: wrap;
+  }
+  .card-people {
+    right: -700px;
+  }
 }

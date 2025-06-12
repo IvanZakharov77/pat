@@ -55,3 +55,39 @@
     color: #1a1d27;
   }
 }
+//
+@media screen and (min-width: 1000px) and (max-width: 1279px) {
+  .businesswoman {
+    padding-left: 0px;
+    flex-wrap: wrap;
+    margin-top: 124px;
+    .woman-img {
+      margin-top: -180px;
+    }
+    .businesswoman-item,
+    .woman-img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h2 {
+      font-size: 56px;
+      line-height: 107%;
+      margin-top: -160px;
+    }
+    .businesswoman-blocks {
+      display: flex;
+      flex-wrap: nowrap;
+      & .businesswoman-block div {
+        padding: 24px;
+        width: 216px;
+        height: 214px;
+        img {
+          margin-bottom: 24px;
+        }
+      }
+      & .businesswoman-block:last-child {
+        margin-left: 24px;
+      }
+    }
+  }
+}

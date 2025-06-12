@@ -166,3 +166,19 @@
 .accordion-button:focus {
   box-shadow: none !important;
 }
+//
+@media screen and (min-width: 1000px) and (max-width: 1279px) {
+  .sanem-svarigako div:first-child img {
+    max-width: 252px;
+    height: 252px;
+  }
+  .sanem-svarigako div:nth-child(2) {
+    margin-left: 0px;
+  }
+  .uzdotie {
+    .accordion {
+      margin-left: 165px;
+      margin-right: 165px;
+    }
+  }
+}

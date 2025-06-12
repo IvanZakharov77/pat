@@ -8,8 +8,6 @@
   display: flex;
   flex-wrap: nowrap;
   .hero-title {
-    margin-left: 64px;
-    padding-right: 180px;
     h1 {
       font-family: var(--font-family);
       font-weight: 700;
@@ -171,5 +169,54 @@
   img {
     max-width: 18px;
     height: 18px;
+  }
+}
+//
+@media screen and (min-width: 1280px) {
+  .hero-title {
+    margin-left: 64px;
+    padding-right: 180px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1279px) {
+  .hero-title {
+    margin-left: 64px;
+    padding-right: 0px;
+  }
+  .hero-animation-container {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+
+    top: 476px;
+
+    .circle-hero {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: white;
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+  .circle1 {
+    left: -320px;
+  }
+
+  .circle2 {
+    left: -300px;
+  }
+
+  .circle3 {
+    left: -280px;
+  }
+
+  .circle4 {
+    left: -260px;
+  }
+
+  .circle5 {
+    left: -370px;
   }
 }

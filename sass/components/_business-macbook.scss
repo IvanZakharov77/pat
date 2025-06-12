@@ -71,3 +71,30 @@
     height: 652px;
   }
 }
+//
+@media screen and (min-width: 1000px) and (max-width: 1279px) {
+  .business-macbook {
+    height: 100vh;
+  }
+  .hero-title {
+    margin-left: 0px;
+    h2 {
+      margin-top: 0px;
+    }
+    h2,
+    h3 {
+      margin-right: 0px !important;
+    }
+  }
+  .business-macbook-img .img-man {
+    bottom: 0%;
+  }
+  .business-macbook-slider-1 {
+    top: 650px;
+    right: 450px;
+  }
+  .business-macbook-slider-2 {
+    top: 500px;
+    right: 100px;
+  }
+}

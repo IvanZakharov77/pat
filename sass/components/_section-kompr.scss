@@ -42,3 +42,9 @@
     color: #1a1d27;
   }
 }
+//
+@media screen and (min-width: 1000px) and (max-width: 1279px) {
+  .card-kompromisiem img {
+    margin-bottom: 24px;
+  }
+}
