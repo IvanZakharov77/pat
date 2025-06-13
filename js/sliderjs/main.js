@@ -1,13 +1,12 @@
-// 0) Подключаем GSAP + ScrollTrigger
+// Подключаем GSAP + ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-function initFeaturesBannerAnimation() {
-  const section = document.querySelector('.section-features-banner .features-content');
-  const cards = gsap.utils.toArray('.section-features-banner .app-widget');
+function initFeaturesBannerAnimation(sectionSelector, cardSelector) {
+  const section = document.querySelector(sectionSelector);
+  const cards = gsap.utils.toArray(cardSelector);
 
   if (!section || cards.length === 0) return;
 
-  // 2) Собираем timeline для карточек
   const shift = 60;
   const showDur = 1.2;
   const hold = 1;
@@ -21,7 +20,6 @@ function initFeaturesBannerAnimation() {
       pin: true,
       scrub: 4,
       snap: {
-        // делим весь диапазон на (N−1) ровных шагов
         snapTo: 1 / (cards.length - 1),
         duration: 0.3,
         ease: 'power2.out',
@@ -29,7 +27,7 @@ function initFeaturesBannerAnimation() {
     },
   });
 
-  // 3) Анимируем карточки как раньше
+  // Анимация карточек
   cards.forEach((card, i) => {
     const xOff = i % 2 === 0 ? shift : -shift;
     tl.fromTo(
@@ -42,4 +40,14 @@ function initFeaturesBannerAnimation() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', initFeaturesBannerAnimation);
+document.addEventListener('DOMContentLoaded', () => {
+  initFeaturesBannerAnimation(
+    '.section-features-banner .features-content',
+    '.section-features-banner .app-widget'
+  );
+
+  initFeaturesBannerAnimation(
+    '.section-features-banner1 .features-content1',
+    '.section-features-banner1 .app-widget1'
+  );
+});

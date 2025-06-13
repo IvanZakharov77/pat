@@ -105,7 +105,9 @@ h2 {
     opacity: 0; /* Изначально скрыт */
     visibility: hidden; /* Убираем из потока */
   }
-
+  .navbar-toggler {
+    border: none;
+  }
   .mobile-menu {
     background-color: white;
     position: fixed;
@@ -133,5 +135,9 @@ h2 {
 
   .navbar-expand-lg .navbar-collapse {
     justify-content: space-between;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    flex-direction: row-reverse;
+    margin-right: 24px;
   }
 }
