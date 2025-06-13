@@ -41,11 +41,9 @@
   border: none;
   margin-right: 6px;
 }
-.nav-btn .btn:nth-child(2) {
-  background-color: #d1d2d4;
-  border: none;
+.navbar-collapse {
+  justify-content: space-between;
 }
-//
 h3 {
   font-family: var(--font-family);
   font-weight: 700;
@@ -59,6 +57,27 @@ h2 {
 }
 .btn-close-menu {
   display: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.dropdown-menu {
+  padding: 8px;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #1a1d27;
+  background-color: rgba(248, 248, 248, 0.7);
+  backdrop-filter: blur(7.5px);
+  border: none;
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(250, 234, 192, 0.459);
+    border-radius: 12px;
+  }
+}
+.second-dropdown-menu li {
+  display: flex;
 }
 @media screen and (max-width: 1279px) {
   body {
@@ -94,16 +113,22 @@ h2 {
 }
 
 @media screen and (min-width: 1280px) {
-  .navbar-nav li:first-child {
-    display: none;
+  .nav-head {
+    li:first-child {
+      display: none;
+    }
   }
 }
-
+.btn-close-menu {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
 @media screen and (min-width: 1000px) and (max-width: 1279px) {
   .mobile-block-menu {
-    display: none; /* Изначально скрыт */
-    opacity: 0; /* Изначально скрыт */
-    visibility: hidden; /* Убираем из потока */
+    display: none;
+    opacity: 0;
+    visibility: hidden;
   }
   .navbar-toggler {
     border: none;
@@ -116,17 +141,17 @@ h2 {
     width: 360px;
     height: 100vh;
     transform: translateX(100%);
-    transition: transform 0.3s ease; /* Плавное появление */
+    transition: transform 0.3s ease;
   }
 
   .active-block-menu-back {
     display: block;
-    opacity: 1; /* Сделаем видимым */
-    visibility: visible; /* Делаем доступным для взаимодействия */
+    opacity: 1;
+    visibility: visible;
   }
 
   .active-menu {
-    transform: translateX(0); /* Меняем положение с правой стороны */
+    transform: translateX(0);
   }
 
   .navbar-toggler {
@@ -139,5 +164,11 @@ h2 {
   .navbar-expand-lg .navbar-collapse {
     flex-direction: row-reverse;
     margin-right: 24px;
+  }
+  //
+  .nav-head {
+    .nav-item:last-child {
+      display: none;
+    }
   }
 }

@@ -1,36 +1,44 @@
-// menu navbar
 const btnOpenMenu = document.querySelectorAll('.navbar-toggler');
 const btnClozeMenu = document.querySelectorAll('.btn-close-menu');
 const activeBlockMenuBack = document.querySelector('.mobile-block-menu');
 const activeMenu = document.querySelector('.mobile-menu');
+const parentBlock = document.querySelector('.mobile-block-menu');
+
+function closeMenu(event) {
+  if (!event.target.closest('.mobile-menu') && !event.target.closest('.navbar-toggler')) {
+    activeBlockMenuBack.classList.remove('active-block-menu-back');
+    activeMenu.classList.remove('active-menu');
+    setTimeout(() => {
+      activeBlockMenuBack.style.display = 'none';
+    }, 300);
+  }
+}
 
 if (btnOpenMenu.length > 0 && activeBlockMenuBack && activeMenu) {
   btnOpenMenu.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      // Показываем блок с фоном и меню с анимацией
-      activeBlockMenuBack.style.display = 'block'; // Убираем display: none
+      activeBlockMenuBack.style.display = 'block';
       setTimeout(() => {
         activeBlockMenuBack.classList.add('active-block-menu-back');
         activeMenu.classList.add('active-menu');
-      }, 10); // Маленькая задержка для применения transition
+      }, 10);
     });
   });
 
   btnClozeMenu.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      // Убираем классы с анимацией
       activeBlockMenuBack.classList.remove('active-block-menu-back');
       activeMenu.classList.remove('active-menu');
-
-      // Добавляем задержку перед скрытием
       setTimeout(() => {
         activeBlockMenuBack.style.display = 'none';
-      }, 300); // Задержка должна быть равна длительности анимации
+      }, 300);
     });
   });
+
+  parentBlock.addEventListener('click', closeMenu);
 }
 
-// btn price
+// btn price--------------------
 function toggleOption(option) {
   const yearly = document.getElementById('yearly');
   const monthly = document.getElementById('monthly');
