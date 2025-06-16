@@ -114,7 +114,8 @@ h2 {
 
 @media screen and (min-width: 1280px) {
   .nav-head {
-    li:first-child {
+    li:first-child,
+    li:nth-child(2) {
       display: none;
     }
   }

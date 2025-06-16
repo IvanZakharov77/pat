@@ -198,7 +198,8 @@ h2 {
   }
 }
 @media screen and (min-width: 1280px) {
-  .nav-head li:first-child {
+  .nav-head li:first-child,
+  .nav-head li:nth-child(2) {
     display: none;
   }
 }
@@ -1036,7 +1037,7 @@ h2 {
 
 .business-macbook-slider-2 {
   top: 302px;
-  right: 350px;
+  right: 50px;
 }
 
 .slider-business-macbook-icon {
