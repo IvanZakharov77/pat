@@ -220,3 +220,31 @@
     left: -370px;
   }
 }
+//
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .section-hero {
+    width: 100%;
+    padding: 0px;
+    background-color: #80b9fb;
+    .btn-slider {
+      right: -100px;
+    }
+    .hero {
+      width: 768px;
+      margin-top: 0px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 0px;
+      padding-left: 38px;
+      padding-right: 38px;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      .hero-title {
+        text-align: left;
+        p {
+          padding-right: 0px;
+        }
+      }
+    }
+  }
+}

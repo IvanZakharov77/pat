@@ -18,8 +18,12 @@
   <body>
     <nav id="top" class="navbar navbar-expand-lg bg-white">
       <div class="containe-not-bootstrap container-fluid">
-        <a class="navbar-brand" href="#"><img class="logo-nav" src="./image/Logo.png" /></a>
-
+        <a class="navbar-brand logo-nav" href="#"
+          ><img class="logo-nav" src="./image/Logo.png"
+        /></a>
+        <a class="navbar-brand logo-nav-mobile" href="#"
+          ><img class="logo-nav-mobile" src="./image/Logowhite.svg"
+        /></a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="mobile-block-menu">
             <div class="mobile-menu">
@@ -116,7 +120,7 @@
     </nav>
     <main>
       <section>
-        <div class="containe-not-bootstrap">
+        <div class="containe-not-bootstrap section-hero">
           <div class="hero">
             <div class="hero-title">
               <h1>Bankas integrācija un maksājumu pārvaldība</h1>
@@ -188,7 +192,7 @@
           <div class="second-block">
             <div class="second-title">
               <h2>Kā tas darbojas?</h2>
-              <p>
+              <p class="text-second-block">
                 Pievienojot savu bankas kontu PATS.LV, Tu iegūsti ērtu veidu, kā ātri un precīzi
                 pārvaldīt darījumus - gan ienākumus, gan izdevumus. Visi maksājumi kļūst redzami
                 sistēmā, Tev atliek tikai apstiprināt un tie tiks iegrāmatatoti.
@@ -475,7 +479,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section class="section-summ">
         <div class="containe-not-bootstrap summ">
           <h2 class="title-summ">Cik tas maksā</h2>
           <div>
@@ -2144,7 +2148,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section class="section-team">
         <div class="containe-not-bootstrap">
           <div class="komanda">
             <div class="komanda-left">
@@ -2176,47 +2180,51 @@
         </div>
       </section>
     </main>
-    <footer class="containe-not-bootstrap footer">
-      <div class="footer-top">
-        <div>
-          <a class="navbar-brand" href="#"><img class="logo-nav" src="./image/Logoblack.png" /></a>
-        </div>
-        <div>
-          <a class="hand-up" href="#top"
-            >Вверх <img class="footer-arrow" src="./image/icon/arrow up.svg" alt=""
-          /></a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-left-block">
-          <div class="footer-social">
-            <img src="./image/icon/facebook.svg" alt="" />
-            <img src="./image/icon/inst.svg" alt="" />
-            <img src="./image/icon/yout.svg" alt="" />
+    <footer class="footer">
+      <div class="containe-not-bootstrap">
+        <div class="footer-top">
+          <div>
+            <a class="navbar-brand" href="#"
+              ><img class="logo-nav-footer" src="./image/Logoblack.png"
+            /></a>
           </div>
-          <p class="bl-text">
-            Vincit Online, SIA, vienotais reģ. Nr. 40203249460, PVN maksātāja numurs LV40203249460,
-            Elizabetes iela 23, Rīga, LV-1010, Latvija
-          </p>
-          <p class="gr-text">COPYRIGHT © 2025, ALL RIGHTS RESERVED. Vincit Online, SIA.</p>
+          <div>
+            <a class="hand-up" href="#top"
+              >Вверх <img class="footer-arrow" src="./image/icon/arrow up.svg" alt=""
+            /></a>
+          </div>
         </div>
-        <div class="footer-center-block">
-          <h3>Policies</h3>
-          <ul>
-            <li>Cookies policy</li>
-            <li>Privacy policy</li>
-            <li>Terms of use</li>
-            <li>Cookie Settings</li>
-          </ul>
-        </div>
-        <div class="footer-right-block">
-          <h3>Links</h3>
-          <ul>
-            <li>Blog</li>
-            <li>For entrepreneurs</li>
-            <li>Register VID</li>
-            <li>Help</li>
-          </ul>
+        <div class="footer-bottom">
+          <div class="footer-left-block">
+            <div class="footer-social">
+              <img src="./image/icon/facebook.svg" alt="" />
+              <img src="./image/icon/inst.svg" alt="" />
+              <img src="./image/icon/yout.svg" alt="" />
+            </div>
+            <p class="bl-text">
+              Vincit Online, SIA, vienotais reģ. Nr. 40203249460, PVN maksātāja numurs
+              LV40203249460, Elizabetes iela 23, Rīga, LV-1010, Latvija
+            </p>
+            <p class="gr-text">COPYRIGHT © 2025, ALL RIGHTS RESERVED. Vincit Online, SIA.</p>
+          </div>
+          <div class="footer-center-block">
+            <h3>Policies</h3>
+            <ul>
+              <li>Cookies policy</li>
+              <li>Privacy policy</li>
+              <li>Terms of use</li>
+              <li>Cookie Settings</li>
+            </ul>
+          </div>
+          <div class="footer-right-block">
+            <h3>Links</h3>
+            <ul>
+              <li>Blog</li>
+              <li>For entrepreneurs</li>
+              <li>Register VID</li>
+              <li>Help</li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>

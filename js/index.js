@@ -14,29 +14,60 @@ function closeMenu(event) {
   }
 }
 
-if (btnOpenMenu.length > 0 && activeBlockMenuBack && activeMenu) {
-  btnOpenMenu.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      activeBlockMenuBack.style.display = 'block';
-      setTimeout(() => {
-        activeBlockMenuBack.classList.add('active-block-menu-back');
-        activeMenu.classList.add('active-menu');
-      }, 10);
-    });
-  });
+function initMenu() {
+  if (window.innerWidth < 1280) {
+    if (btnOpenMenu.length > 0 && activeBlockMenuBack && activeMenu) {
+      btnOpenMenu.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          activeBlockMenuBack.style.display = 'block';
+          setTimeout(() => {
+            activeBlockMenuBack.classList.add('active-block-menu-back');
+            activeMenu.classList.add('active-menu');
+          }, 10);
+        });
+      });
 
-  btnClozeMenu.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      activeBlockMenuBack.classList.remove('active-block-menu-back');
-      activeMenu.classList.remove('active-menu');
-      setTimeout(() => {
-        activeBlockMenuBack.style.display = 'none';
-      }, 300);
-    });
-  });
+      btnClozeMenu.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          activeBlockMenuBack.classList.remove('active-block-menu-back');
+          activeMenu.classList.remove('active-menu');
+          setTimeout(() => {
+            activeBlockMenuBack.style.display = 'none';
+          }, 300);
+        });
+      });
 
-  parentBlock.addEventListener('click', closeMenu);
+      parentBlock.addEventListener('click', closeMenu);
+    }
+  } else {
+    activeBlockMenuBack.style.display = 'block';
+    activeBlockMenuBack.classList.remove('active-block-menu-back');
+    activeMenu.classList.remove('active-menu');
+  }
 }
+initMenu();
+window.addEventListener('resize', function () {
+  initMenu();
+});
+// замена в кнопке входа текста на иконку человекчек
+const btn = document.querySelector('.btn.btn-secondary.btn-lg');
+
+function replaceTextWithImage() {
+  if (window.innerWidth < 1000) {
+    const img = document.createElement('img');
+    img.src = './image/entrance.svg';
+    img.alt = 'Войти';
+    img.style.width = 'auto';
+    btn.innerHTML = '';
+    btn.appendChild(img);
+  } else {
+    btn.innerHTML = 'Войти';
+  }
+}
+replaceTextWithImage();
+window.addEventListener('resize', function () {
+  replaceTextWithImage();
+});
 
 // btn price--------------------
 function toggleOption(option) {

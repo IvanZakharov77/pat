@@ -50,6 +50,7 @@
   letter-spacing: -0.01em;
   color: #1a1d27;
   margin-bottom: 24px;
+  text-transform: uppercase;
 }
 .gr-text {
   line-height: 117%;
@@ -76,6 +77,30 @@
       letter-spacing: -0.01em;
       color: #1a1d27;
       margin-bottom: 16px;
+    }
+  }
+}
+//
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .footer-top:last-child {
+    margin-top: 50px;
+  }
+  .footer-bottom {
+    position: relative;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+  .footer-social {
+    position: absolute;
+    right: 0px;
+    top: -70px;
+  }
+  .footer-left-block {
+    p {
+      margin-right: 0px;
+    }
+    .gr-text {
+      margin-right: 635px;
     }
   }
 }

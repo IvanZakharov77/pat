@@ -182,3 +182,24 @@
     }
   }
 }
+//
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .sanem-svarigako {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .sanem-svarigako div:first-child img {
+    max-width: 240px;
+    height: 240px;
+  }
+  .sanem-svarigako div:nth-child(2) {
+    margin-left: 0px;
+  }
+  .sanem-svarigako form .input {
+    width: 100%;
+  }
+  .accordion-flush {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}

@@ -84,7 +84,7 @@
 .price12 {
   background-color: #80b9fb;
   border-radius: 28px;
-  padding: 10px 32px 10px 32px;
+  padding: 10px 5px 10px 5px;
   margin: 16px 16px 24px 16px;
   h3 {
     font-size: 12px;
@@ -211,4 +211,16 @@
 .activ {
   background-color: #333;
   color: white;
+}
+//
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .section-summ {
+    background-color: #f8f8f8;
+  }
+
+  .price1,
+  .price2,
+  .price3 {
+    width: 245px;
+  }
 }

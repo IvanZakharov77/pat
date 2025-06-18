@@ -160,3 +160,30 @@
     right: -700px;
   }
 }
+//
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .card {
+    width: 225px;
+    border: none;
+    border-radius: 20px;
+    padding: 20px 20px 20px 20px;
+    margin: 0px;
+
+    img {
+      margin-bottom: 20px;
+    }
+  }
+  .text-second-block {
+    display: none;
+  }
+  .people {
+    background-color: #80b9fb;
+    flex-wrap: wrap;
+  }
+  .card-people {
+    right: -480px;
+  }
+  .people .number {
+    padding-right: 0px;
+  }
+}

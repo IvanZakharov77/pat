@@ -129,3 +129,21 @@
     margin-left: 0px;
   }
 }
+//
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .komanda {
+    margin-bottom: 0px;
+  }
+  .section-team {
+    background-color: #ffbea5;
+  }
+  .komanda-right {
+    margin: 450px 0px 78px 0px;
+    div {
+      text-align: right;
+    }
+  }
+  .btn-komanda {
+    margin-left: 24px;
+  }
+}

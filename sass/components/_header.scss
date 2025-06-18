@@ -79,11 +79,17 @@ h2 {
 .second-dropdown-menu li {
   display: flex;
 }
+// ----------------------------------
 @media screen and (max-width: 1279px) {
   body {
     position: relative;
   }
-
+  .navbar-toggler,
+  .navbar-toggler:focus,
+  .navbar-toggler:hover {
+    border: none;
+    box-shadow: none;
+  }
   .mobile-block-menu {
     position: fixed;
     top: 0;
@@ -110,29 +116,11 @@ h2 {
   body {
     overflow-x: hidden;
   }
-}
-
-@media screen and (min-width: 1280px) {
-  .nav-head {
-    li:first-child,
-    li:nth-child(2) {
-      display: none;
-    }
-  }
-}
-.btn-close-menu {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-@media screen and (min-width: 1000px) and (max-width: 1279px) {
+  //
   .mobile-block-menu {
     display: none;
     opacity: 0;
     visibility: hidden;
-  }
-  .navbar-toggler {
-    border: none;
   }
   .mobile-menu {
     background-color: white;
@@ -167,9 +155,80 @@ h2 {
     margin-right: 24px;
   }
   //
+}
+@media screen and (max-width: 999px) {
+  .nav-btn .btn:first-child {
+    backdrop-filter: blur(15px);
+    background: rgba(60, 141, 234, 0.7);
+  }
+  .nav-btn .btn:nth-child(2) {
+    background: rgba(60, 141, 234, 0);
+    border: none;
+  }
+  .nav-btn {
+    color: white;
+  }
+}
+
+.logo-nav-mobile {
+  display: none;
+}
+@media screen and (min-width: 1280px) {
+  .nav-head {
+    li:first-child,
+    li:nth-child(2) {
+      display: none;
+    }
+  }
+  // .mobile-block-menu {
+  //   display: none;
+  //   opacity: 0;
+  //   visibility: hidden;
+  // }
+}
+.btn-close-menu {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1279px) {
+  //
   .nav-head {
     .nav-item:last-child {
       display: none;
     }
+  }
+}
+//
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .navbar > .container,
+  .navbar > .container-fluid,
+  .navbar > .container-lg,
+  .navbar > .container-md,
+  .navbar > .container-sm,
+  .navbar > .container-xl,
+  .navbar > .container-xxl {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-collapse:not(.show) {
+    display: block !important;
+  }
+  .navbar {
+    background-color: #80b9fb !important;
+  }
+  .d-flex {
+    display: flex !important;
+    justify-content: flex-end;
+  }
+  //
+  .logo-nav-mobile {
+    display: block;
+  }
+  .logo-nav {
+    display: none;
   }
 }

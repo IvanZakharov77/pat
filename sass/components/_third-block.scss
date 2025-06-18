@@ -108,3 +108,17 @@
   font-size: 1.1rem;
   z-index: 99999;
 }
+//
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .third-block h2 {
+    margin-right: 0px;
+    margin-top: 0px;
+  }
+  .third-img .img-man {
+    top: 300px;
+  }
+  #third-section {
+    width: 100%;
+    background-color: #80b9fb;
+  }
+}

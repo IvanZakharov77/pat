@@ -25,6 +25,8 @@
   border-radius: 32px;
   display: flex;
   flex-wrap: nowrap;
+  height: 100vh !important;
+  max-height: 100vh !important;
   h2 {
     margin-top: 104px;
     margin-right: 650px;
@@ -116,5 +118,46 @@
   .business-macbook-slider3 {
     top: 0px;
     right: 200px;
+  }
+}
+//
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .section-features-banner1 {
+    background-color: #fff4db;
+  }
+  .containe-not-bootstrap {
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-features-banner1 {
+    .pin-spacer {
+      margin-top: 0px !important;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100% !important;
+      background-color: #fff4db !important;
+    }
+    .hero-title {
+      h2,
+      h3 {
+        margin-right: 0px;
+        text-align: center;
+      }
+      h2 {
+        margin-top: 0px;
+        font-size: 45px;
+      }
+      h3 {
+        margin-left: 144px;
+        margin-right: 144px;
+      }
+    }
+  }
+  .business-macbook-img .img-man {
+    top: 150px;
+  }
+  .business-macbook {
+    padding-left: 0px !important;
   }
 }
