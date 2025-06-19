@@ -2122,8 +2122,13 @@ h2 {
 }
 
 @media screen and (min-width: 768px) and (max-width: 999px) {
-  .footer-top:last-child {
-    margin-top: 50px;
+  .footer-top {
+    position: relative;
+  }
+  .footer-top div:last-child {
+    position: absolute;
+    top: 130px;
+    right: 0px;
   }
   .footer-bottom {
     position: relative;
