@@ -2092,6 +2092,58 @@ h2 {
     margin-right: 0px;
   }
 }
+@media screen and (min-width: 768px) {
+  .second-form {
+    display: none;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .sanem-svarigako {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 24px;
+  }
+  .sanem-svarigako div {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sanem-svarigako div:first-child img {
+    max-width: 240px;
+    height: 240px;
+  }
+  .sanem-svarigako div:nth-child(2) {
+    margin-left: 0px;
+  }
+  .sanem-svarigako div:nth-child(2) h2 {
+    font-size: 24px;
+  }
+  .sanem-svarigako div:nth-child(2) p {
+    margin-bottom: 15px;
+  }
+  .sanem-svarigako form .input {
+    width: 392px;
+  }
+  .sanem-svarigako .form-btn {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .second-form {
+    display: block;
+    background-color: #91c2fc;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  .second-form h2 {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 147%;
+  }
+  #accordionFlushExample {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
 .komanda {
   border-radius: 32px;
   padding: 64px;
@@ -2251,6 +2303,17 @@ h2 {
     margin-left: 24px;
   }
 }
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .section-team {
+    background-color: #ffbea5;
+  }
+  .komanda {
+    padding: 0px;
+  }
+  .komanda-left img {
+    left: 50px;
+  }
+}
 .footer {
   background-color: #f8f8f8;
 }
@@ -2354,7 +2417,7 @@ h2 {
   margin-bottom: 16px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 999px) {
+@media screen and (min-width: 480px) and (max-width: 999px) {
   .footer-top {
     position: relative;
   }
@@ -2382,6 +2445,11 @@ h2 {
   }
   .footer-left-block .gr-text {
     margin-right: 635px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .bl-text {
+    padding-right: 250px;
   }
 }
 .summ {

@@ -147,3 +147,15 @@
     margin-left: 24px;
   }
 }
+//
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .section-team {
+    background-color: #ffbea5;
+  }
+  .komanda {
+    padding: 0px;
+  }
+  .komanda-left img {
+    left: 50px;
+  }
+}
