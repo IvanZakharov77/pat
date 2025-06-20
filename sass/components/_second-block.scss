@@ -1,5 +1,5 @@
 // second-block
-.section-second {
+.block-second {
   background-color: #f8f8f8;
 }
 .second-block {
@@ -140,6 +140,9 @@
   }
 }
 @media screen and (min-width: 1000px) and (max-width: 1279px) {
+  .blue {
+    display: none;
+  }
   .card {
     width: 294px;
     border: none;
@@ -161,6 +164,43 @@
   }
 }
 //
+@media screen and (max-width: 999px) {
+  .white {
+    display: none;
+  }
+  .blue {
+    display: block;
+    img {
+      max-width: 48px;
+      height: 48px;
+    }
+  }
+  //
+  .card-people img:first-child {
+    margin-left: -65px;
+    z-index: 9;
+  }
+
+  .card-people img:nth-child(2) {
+    margin-left: -29px;
+    z-index: 8;
+  }
+
+  .card-people img:nth-child(3) {
+    margin-left: 0;
+    z-index: 7;
+  }
+
+  .card-people img:nth-child(4) {
+    margin-left: 29px;
+    z-index: 6;
+  }
+
+  .card-people img:nth-child(5) {
+    margin-left: 65px;
+    z-index: 5;
+  }
+}
 @media screen and (min-width: 768px) and (max-width: 999px) {
   .card {
     width: 225px;
@@ -185,5 +225,34 @@
   }
   .people .number {
     padding-right: 0px;
+  }
+}
+//
+@media screen and (min-width: 360px) and (max-width: 768px) {
+  .section-second {
+    background-color: #f8f8f8;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .people {
+    background-color: #80b9fb;
+    flex-wrap: wrap;
+  }
+  .second-cart-item {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .card:not(:last-child) {
+    margin-bottom: 8px;
+  }
+  .card {
+    width: 440px;
+    padding: 20px;
+  }
+  .card-people {
+    right: -300px;
+  }
+  .people .card-text p {
+    padding-right: 50px;
   }
 }

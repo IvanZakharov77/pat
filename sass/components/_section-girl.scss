@@ -93,11 +93,6 @@
 }
 //
 @media screen and (min-width: 768px) and (max-width: 999px) {
-  .section-girl {
-    width: 100%;
-    background-color: #ffbea5;
-    height: 868px;
-  }
   .pin-spacer {
     margin-bottom: 0px !important;
   }
@@ -118,6 +113,83 @@
       z-index: 99999;
       margin-top: 200px;
       right: 10%;
+    }
+  }
+}
+@media screen and (max-width: 999px) {
+  .section-girl {
+    width: 100%;
+    background-color: #ffbea5;
+    height: 868px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .section-girl {
+    height: 740px;
+  }
+  .pin-spacer {
+    margin-bottom: 0px !important;
+  }
+  .businesswoman {
+    position: relative;
+    flex-wrap: wrap;
+    .woman-img {
+      position: absolute;
+      top: -80px;
+      right: 30%;
+      margin-left: auto;
+      margin-right: auto;
+      img {
+        max-width: 300px;
+      }
+    }
+    .businesswoman-item {
+      margin-right: 0px;
+      position: absolute;
+      z-index: 99999;
+      margin-top: 150px;
+      right: 20%;
+
+      h2 {
+        font-size: 34px;
+      }
+      .businesswoman-blocks {
+        .businesswoman-block {
+          flex-wrap: wrap !important;
+          flex-direction: column;
+          div {
+            display: flex;
+            padding: 16px;
+            width: 440px;
+            height: 96px;
+            margin-bottom: 4px;
+            div {
+              margin-top: -16px;
+              margin-bottom: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .businesswoman-block div:nth-child(2) {
+    margin-left: 0px;
+  }
+  .businesswoman-block {
+    div {
+      img {
+        max-width: 40px;
+        height: 40px;
+      }
+      div {
+        padding: 0px !important;
+        padding-top: 16px !important;
+        padding-left: 16px !important;
+        display: block !important;
+        h3 {
+          font-size: 16px;
+        }
+      }
     }
   }
 }

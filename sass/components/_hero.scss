@@ -151,7 +151,8 @@
 .card {
   width: 286px;
   // height: 464px;
-  border: 5px solid red;
+  // border: 5px solid red;
+  border: none;
   flex-shrink: 0;
   margin-left: 10px;
   margin-right: 10px;
@@ -221,7 +222,7 @@
   }
 }
 //
-@media screen and (min-width: 768px) and (max-width: 999px) {
+@media screen and (max-width: 999px) {
   .section-hero {
     width: 100%;
     padding: 0px;
@@ -230,7 +231,7 @@
       right: -100px;
     }
     .hero {
-      width: 768px;
+      // width: 768px;
       margin-top: 0px;
       margin-left: auto;
       margin-right: auto;
@@ -246,5 +247,21 @@
         }
       }
     }
+  }
+}
+//
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .hero {
+    margin-bottom: 0px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .hero {
+    padding: 0px !important;
+  }
+  h1 {
+    font-size: 34px !important;
+    line-height: 118%;
+    letter-spacing: -0.03em;
   }
 }

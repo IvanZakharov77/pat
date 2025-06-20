@@ -224,3 +224,22 @@
     width: 245px;
   }
 }
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .section-summ {
+    background-color: #f8f8f8;
+  }
+  .first-block-price,
+  .second-block-price {
+    overflow: hidden;
+    overflow-x: auto;
+    .price1,
+    .price2,
+    .price3 {
+      min-width: 272px;
+    }
+    .price1,
+    .price2 {
+      margin-right: 4px;
+    }
+  }
+}

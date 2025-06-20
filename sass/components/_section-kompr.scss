@@ -54,3 +54,19 @@
     display: none;
   }
 }
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .section-kompromisiem {
+    width: 100%;
+    background-color: #f8f8f8;
+  }
+  .kompromisiem-item {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .blcok-kompromisiem {
+    h2 {
+      font-size: 34px;
+      text-align: center;
+    }
+  }
+}

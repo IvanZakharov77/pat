@@ -1,3 +1,34 @@
+function adjustLayout() {
+  const blocks = document.querySelectorAll('.businesswoman-block > div');
+  if (window.innerWidth <= 767) {
+    blocks.forEach((block) => {
+      if (!block.querySelector('div')) {
+        const h3 = block.querySelector('h3');
+        const p = block.querySelector('p');
+
+        if (h3 && p) {
+          const newDiv = document.createElement('div');
+          newDiv.appendChild(h3);
+          newDiv.appendChild(p);
+          block.appendChild(newDiv);
+        }
+      }
+    });
+  } else {
+    blocks.forEach((block) => {
+      const wrapper = block.querySelector('div');
+      if (wrapper) {
+        block.insertBefore(wrapper.querySelector('h3'), wrapper);
+        block.insertBefore(wrapper.querySelector('p'), wrapper);
+        block.removeChild(wrapper);
+      }
+    });
+  }
+}
+window.addEventListener('load', adjustLayout);
+window.addEventListener('resize', adjustLayout);
+
+// --------------
 const btnOpenMenu = document.querySelectorAll('.navbar-toggler');
 const btnClozeMenu = document.querySelectorAll('.btn-close-menu');
 const activeBlockMenuBack = document.querySelector('.mobile-block-menu');
@@ -68,7 +99,21 @@ replaceTextWithImage();
 window.addEventListener('resize', function () {
   replaceTextWithImage();
 });
+// замена текста в кнопке "попробовать бесплатно" на "попробовать за 0"
+const btnFirst = document.querySelector('.btn.btn-first.btn-lg');
 
+function replaceText() {
+  if (window.innerWidth < 768) {
+    btnFirst.innerHTML = '';
+    btnFirst.innerHTML = 'Попробовать за 0€';
+  } else {
+    btnFirst.innerHTML = 'Попробовать бесплатно';
+  }
+}
+replaceText();
+window.addEventListener('resize', function () {
+  replaceText();
+});
 // btn price--------------------
 function toggleOption(option) {
   const yearly = document.getElementById('yearly');
